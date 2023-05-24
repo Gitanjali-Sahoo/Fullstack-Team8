@@ -59,22 +59,5 @@ const Wrap = styled.div`
         display: flex;
         gap: 20px;
     }
-    @media screen and (min-width: 768px) {
-        .footer-container {
-            flex-direction: row;
-           
-        }
-
-        .footer-content {
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-        }
-
-        .footer-text {
-            flex-direction: row;
-            gap: 20px;
-        }
-    }
+ 
 `
