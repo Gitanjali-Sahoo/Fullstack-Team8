@@ -59,4 +59,18 @@ const Wrap = styled.div`
         display: flex;
         gap: 20px;
     }
+    @media screen and (max-width: 768px) {
+        .footer-content {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .footer-text {
+            margin-bottom: 20px;
+            flex-direction: column;
+        }
+        .footer-copyright {
+            text-align: center;
+        }
+    }
 `
