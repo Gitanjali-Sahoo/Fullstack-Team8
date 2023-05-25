@@ -1,13 +1,20 @@
 //import the headphone image
 import headphone from '../assets/images/headphone.jpg'
 
-function Hero() {
+
+
+function Hero () {
+
     return (
-        <div>
+        <div  >
+
             <div className="hero-container">
+
                 <div className="hero-image">
-                    <img src={headphone} alt="" />
-                </div>
+
+ <img src={headphone} alt="headphone " />
+</div>
+
                 <div className="hero-text">
                     <div>
                         <h3>
@@ -25,8 +32,10 @@ function Hero() {
                         <button>Buy</button>
                     </div>
                 </div>
-            </div>
-        </div>
+
+
+                </div>
+
     )
 }
 export default Hero
