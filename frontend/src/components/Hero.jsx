@@ -1,12 +1,15 @@
 //import the headphone image
 import headphone from "../images/headphone.jpg";
 
+
 function Hero () {
     return (
-        <div>
+        <div  >
+
             <div className="hero-container">
+
                 <div className="hero-image">
- <img src={headphone} alt="" />
+ <img src={headphone} alt="headphone " />
 </div>
                 <div className="hero-text">
                     <div>
@@ -23,8 +26,8 @@ Your Destination for High-Tech Wonders.</p>
   </div>
                 </div>
 
+                </div>
 
-            </div>
 
         </div>
 
