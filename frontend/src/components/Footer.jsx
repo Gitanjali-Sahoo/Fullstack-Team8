@@ -33,6 +33,7 @@ export default Footer
 const Wrap = styled.div`
     background-color: black;
 
+
     .footer-container {
         color: white;
         display: flex;
@@ -41,6 +42,7 @@ const Wrap = styled.div`
         align-items: center;
         gap: 20px;
         padding: 20px;
+        margin-top: 41%;
     }
 
     .footer-content {
@@ -48,6 +50,7 @@ const Wrap = styled.div`
         justify-content: space-between;
         align-items: center;
         width: 100%;
+        mix-blend-mode: lighten;
     }
 
     .footer-text {
@@ -59,22 +62,24 @@ const Wrap = styled.div`
         display: flex;
         gap: 20px;
     }
-    @media screen and (min-width: 768px) {
-        .footer-container {
-            flex-direction: row;
-           
-        }
-
+    @media screen and (max-width: 900px) {
         .footer-content {
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-        }
 
+            margin-top: 70%;
+        }}
+    @media screen and (max-width: 768px) {
+        .footer-content {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 50%;
+        }
         .footer-text {
-            flex-direction: row;
-            gap: 20px;
+            margin-bottom: 20px;
+            flex-direction: column;
+        }
+        .footer-copyright {
+            text-align: center;
         }
     }
 `
