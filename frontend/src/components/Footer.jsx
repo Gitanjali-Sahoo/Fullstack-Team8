@@ -62,7 +62,7 @@ const Wrap = styled.div`
     @media screen and (min-width: 768px) {
         .footer-container {
             flex-direction: row;
-           
+
         }
 
         .footer-content {
@@ -70,11 +70,13 @@ const Wrap = styled.div`
             justify-content: space-between;
             align-items: center;
             width: 100%;
+
         }
 
         .footer-text {
             flex-direction: row;
             gap: 20px;
+
         }
     }
 `

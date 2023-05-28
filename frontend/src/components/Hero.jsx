@@ -14,13 +14,13 @@ function Hero () {
                 <div className="hero-text">
                     <div>
 
-                    <h3> <span>Empowering your world,</span> one <br />
+                    <h3 > <span>Empowering your world,</span> one <br />
                         device at a time</h3>
                     <p>Where Quality Meets Innovation. <br />
 Your Destination for High-Tech Wonders.</p>
 </div>
 
-                    <div >
+                    <div  >
 
                         <button>Buy</button>
   </div>
