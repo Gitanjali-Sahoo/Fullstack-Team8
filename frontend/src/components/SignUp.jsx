@@ -19,7 +19,8 @@ function SignUp() {
     const handleShow = () => {
         setShowForm(false)
         sethideForm(true)
-      setChangeColor(false)
+        setChangeColor(false)
+        
 
 
     }
