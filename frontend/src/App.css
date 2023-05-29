@@ -4,6 +4,7 @@
     padding: 0;
     overflow-x: hidden;
     background-color: #000000;
+    overflow: hidden;
 }
 * {
     background-color: #000000;
@@ -66,8 +67,13 @@
     margin-left: 70%;
     border: none;
 }
-
-/* Keyframes to routate and fade the hero */
+@media only screen and (max-width: 430px) {
+    .hero-image {
+        width: 20px;
+        height: 300px;
+        top: 25%;
+        left: -16%;
+        transform: translate(-50%, -50%);
 
 @keyframes rotate {
     20% {

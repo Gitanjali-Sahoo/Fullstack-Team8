@@ -33,6 +33,7 @@ export default Footer
 const Wrap = styled.div`
     background-color: black;
 
+
     .footer-container {
         color: white;
         display: flex;
@@ -41,6 +42,7 @@ const Wrap = styled.div`
         align-items: center;
         gap: 20px;
         padding: 20px;
+        margin-top: 41%;
     }
 
     .footer-content {
@@ -48,6 +50,7 @@ const Wrap = styled.div`
         justify-content: space-between;
         align-items: center;
         width: 100%;
+        mix-blend-mode: lighten;
     }
 
     .footer-text {
@@ -66,17 +69,13 @@ const Wrap = styled.div`
         }
 
         .footer-content {
-            flex-direction: row;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
             width: 100%;
-
         }
-
         .footer-text {
             flex-direction: row;
             gap: 20px;
-
         }
     }
 `
