@@ -1,4 +1,5 @@
-import { Facebook, Twitter, Apple } from 'react-bootstrap-icons'
+import { Facebook, Twitter, Apple, Google } from 'react-bootstrap-icons'
+
 import styled from 'styled-components'
 
 function Footer() {
@@ -20,6 +21,7 @@ function Footer() {
                         <Facebook />
                         <Twitter />
                         <Apple />
+                        <Google />
                     </div>
                 </div>
             </div>
@@ -33,7 +35,6 @@ export default Footer
 const Wrap = styled.div`
     background-color: black;
 
-
     .footer-container {
         color: white;
         display: flex;
@@ -41,6 +42,7 @@ const Wrap = styled.div`
         justify-content: center;
         align-items: center;
         gap: 20px;
+
        bottom: 0;
       left: 0;
      width: 100%;
@@ -48,6 +50,7 @@ const Wrap = styled.div`
     position:fixed;
 
   mix-blend-mode: lighten;
+
 
 
 
@@ -69,7 +72,16 @@ const Wrap = styled.div`
     .footer-icon {
         display: flex;
         gap: 20px;
-    }
+    }<<<<<<< Gitanjali
+
+  
+
+    @media screen and (max-width: 768px) {
+        .footer-content {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
     @media screen and (min-width: 768px) {
         .footer-container {
             flex-direction: row;
@@ -83,7 +95,9 @@ const Wrap = styled.div`
             align-items: center;
             width: 100%;
 
+
         }
+
         .footer-text {
             flex-direction: row;
             gap: 20px;
