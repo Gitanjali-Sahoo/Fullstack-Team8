@@ -14,23 +14,27 @@ function NavScrollExample() {
         height: '25px',
         width: '25px',
 
+
     }
 
   return (
     // <Navbar collapseOnSelect expand="lg"  variant="dark">
-        <Navbar collapseOnSelect expand="lg"  variant="dark">
-      <Container fluid>
-        <Navbar.Brand href="#" className='navbar-logo'><img src='./src/images/navbar-logo.PNG' alt="navbar-logo " /></Navbar.Brand>
+
+      <Navbar collapseOnSelect expand="lg"
+          variant="dark" style={{ paddingBottom: '200px' }}  >
+      <Container fluid    >
+        <Navbar.Brand href="#" className='navbar-logo' ><img src='./src/images/navbar-logo.PNG' alt="navbar-logo " /></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll"  className="toggler-icon"  />
         {/* <Navbar.Toggle aria-controls="navbarScroll"  className="toggler-icon" style={{ color: 'white', borderColor: 'white'}} /> */}
-        <Navbar.Collapse id="navbarScroll">
+        <Navbar.Collapse id="navbarScroll"    >
           <Nav
             className="me-auto my-2 my-lg-0"
             style={{ maxHeight: '100px' }}
-            navbarScroll
+                      navbarScroll
+
           >
 
-            <NavDropdown title="Products" id="navbarScrollingDropdown" className="dropdown">
+            <NavDropdown title="Products" id="navbarScrollingDropdown" className="dropdown"  >
               <NavDropdown.Item href="#action3">Smart Phone</NavDropdown.Item>
               <NavDropdown.Item href="#action4"> Laptop </NavDropdown.Item>
               <NavDropdown.Item href="#action5"> Headphone </NavDropdown.Item>
@@ -47,7 +51,9 @@ function NavScrollExample() {
           </Form>
        </Navbar.Collapse>
       </Container>
-    </Navbar>
+          </Navbar>
+
+
   );
 }
 
