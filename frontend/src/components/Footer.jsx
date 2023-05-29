@@ -5,7 +5,7 @@ import styled from 'styled-components'
 function Footer() {
     return (
         <Wrap>
-            <div className="footer-container">
+            <div className="footer-container" >
                 <div className="footer-content">
                     <div className="footer-text">
                         <p>Contact Us</p>
@@ -42,8 +42,18 @@ const Wrap = styled.div`
         justify-content: center;
         align-items: center;
         gap: 20px;
-        padding: 20px;
-        margin-top: 1%;
+
+       bottom: 0;
+      left: 0;
+     width: 100%;
+     overflow: hidden;
+    position:fixed;
+
+  mix-blend-mode: lighten;
+
+
+
+
     }
 
     .footer-content {
@@ -62,7 +72,7 @@ const Wrap = styled.div`
     .footer-icon {
         display: flex;
         gap: 20px;
-    }
+    }<<<<<<< Gitanjali
 
   
 
@@ -71,14 +81,27 @@ const Wrap = styled.div`
             flex-direction: column;
             align-items: center;
             justify-content: center;
+
+    @media screen and (min-width: 768px) {
+        .footer-container {
+            flex-direction: row;
+
+            
+
+        }
+
+        .footer-content {
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+
+
         }
 
         .footer-text {
-            margin-bottom: 20px;
-            flex-direction: column;
+            flex-direction: row;
+            gap: 20px;
         }
-        .footer-copyright {
-            text-align: center;
-        }
+
     }
 `

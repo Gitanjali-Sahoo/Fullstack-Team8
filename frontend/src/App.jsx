@@ -1,22 +1,38 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Footer from './components/Footer'
-// import Hero from './components/Hero'
-import Products from './components/Products'
-import SigninForm from './components/SigninForm'
-import SignupForm from './components/SignupForm'
 
+import Products from './components/Products'
+
+
+
+import NavBar from './components/NavBar'
+import Hero  from './components/Hero'
 function App() {
+
+
     return (
         <>
-            {/* <Hero /> */}
+
 
             <Products />
-            <SigninForm />
-            <SignupForm />
+            
+
+
+            <NavBar />
+
+
+            <Hero />
+
+
+
+
+
             <Footer />
+
         </>
+
     )
 }
 
-export default App
+export default App;
