@@ -17,6 +17,7 @@
     overflow-x: hidden;
 
     mix-blend-mode: lighten;
+    padding-bottom: 100px;
 }
 
 .hero-image {
@@ -111,6 +112,7 @@
         justify-content: center;
         align-items: center;
         mix-blend-mode: lighten;
+        min-height: calc(100vh - 100px);
     }
 
     .hero-image {
@@ -122,7 +124,6 @@
     #hero-image img {
         width: 350px;
         height: 260px;
-
         animation: fadeZoom 6s infinite;
     }
     .hero-text {
@@ -130,7 +131,7 @@
         flex-direction: column;
         overflow: hidden;
         font-size: large;
-        row-gap: 60px;
+        row-gap: 30px;
         top: 47%;
         left: 0;
         right: 0;
@@ -144,6 +145,7 @@
     #hero-button button {
         margin-left: 45%;
     }
+
     #wrap {
         width: 450px;
         display: flex;
@@ -154,8 +156,8 @@
         left: 0;
         right: 0;
         padding-bottom: 100px;
+
         overflow: hidden;
-        margin-bottom: 20%;
     }
 
     .form-sign {
@@ -166,9 +168,10 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-top: 20%;
+
         margin-left: 0%;
         margin-right: 20px;
+        margin-top: 0;
     }
     #form {
         display: flex;
@@ -208,14 +211,50 @@
     }
 }
 
-
-
 /*
 this css property will apply blur effect to the element
 -webkit-filter: blur(0px);
     filter: blur(0px);
-.sign {
-    margin-top: 60%;
-    margin-bottom: 20%;
-}
+
 */
+#cart-container {
+    border: 1px solid white;
+    border-right: none;
+    border-left: none;
+    width: 600px;
+    display: flex;
+    column-gap: 80px;
+    align-items: center;
+}
+
+#cart-container img {
+    width: 300px;
+    height: 210px;
+}
+
+#cart-btn {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 5%;
+    row-gap: 20px;
+}
+
+#cart-btn #checkout {
+    background-color: #f8df00;
+    color: #000000;
+}
+
+#cart-btn button {
+    background-color: #ffffff;
+    color: #000000;
+    width: 120px;
+    padding: 4px;
+}
