@@ -5,7 +5,7 @@ import styled from 'styled-components'
 function Footer() {
     return (
         <Wrap>
-            <div className="footer-container" >
+            <div className="footer-container">
                 <div className="footer-content">
                     <div className="footer-text">
                         <p>Contact Us</p>
@@ -43,17 +43,13 @@ const Wrap = styled.div`
         align-items: center;
         gap: 20px;
 
-       bottom: 0;
-      left: 0;
-     width: 100%;
-     overflow: hidden;
-    position:fixed;
+        /* bottom: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        position: fixed;
 
-  mix-blend-mode: lighten;
-
-
-
-
+        mix-blend-mode: lighten; */
     }
 
     .footer-content {
@@ -72,36 +68,29 @@ const Wrap = styled.div`
     .footer-icon {
         display: flex;
         gap: 20px;
-    }<<<<<<< Gitanjali
-
-  
+    }
 
     @media screen and (max-width: 768px) {
         .footer-content {
             flex-direction: column;
             align-items: center;
             justify-content: center;
-
+        }
+    }
     @media screen and (min-width: 768px) {
         .footer-container {
             flex-direction: row;
-
-            
-
         }
 
         .footer-content {
             flex-direction: column;
             align-items: center;
             width: 100%;
-
-
         }
 
         .footer-text {
             flex-direction: row;
             gap: 20px;
         }
-
     }
 `

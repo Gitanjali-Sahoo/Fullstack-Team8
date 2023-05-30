@@ -77,7 +77,7 @@
         transform: translate(-20%, -62%) rotate(150deg);
     }
 }
-
+    
 /* Keyframes to fade the hero */
 @keyframes fadeZoom {
     0%,
@@ -207,8 +207,6 @@
         width: 170px;
     }
 }
-
-
 
 /*
 this css property will apply blur effect to the element
