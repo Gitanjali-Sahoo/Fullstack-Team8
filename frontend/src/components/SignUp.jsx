@@ -20,7 +20,7 @@ function SignUp() {
         setShowForm(false)
         sethideForm(true)
         setChangeColor(false)
-        
+
 
 
     }
@@ -116,7 +116,7 @@ const Wrap = styled.div`
     justify-content: center;
 
     align-items: center;
-    margin-top: 5%;
+
 
     width: 500px; margin-left: 34%;
 }

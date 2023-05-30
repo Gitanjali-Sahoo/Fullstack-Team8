@@ -58,8 +58,6 @@ function SignIn() {
                     </div>
                     <div >
 
-
-
                         <h4 onClick={handleShow}  style={{ color: changeColor ?  'white': '#f8df00' }} >Sign up</h4>
                         <hr />
 
@@ -106,6 +104,7 @@ function SignIn() {
 export default SignIn
 
 const Wrap = styled.div`
+
 .form-sign {
     display: flex;
     justify-content: center;
@@ -120,10 +119,13 @@ const Wrap = styled.div`
     justify-content: center;
 
     align-items: center;
-    margin-top: 5%;
+
+
 
     width: 500px;
     margin-left: 34%;
+       margin-top:100px;
+
 }
 
 .form {
@@ -133,6 +135,9 @@ const Wrap = styled.div`
     width: 500px;
     row-gap: 20px;
      margin-bottom:30px;
+
+
+
 }
 
 .form input {
