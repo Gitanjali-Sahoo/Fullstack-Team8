@@ -1,12 +1,16 @@
-import { Facebook, Twitter, Apple } from 'react-bootstrap-icons'
-import styled from 'styled-components'
-// import {Link} from 'react-router-dom'
+
+
+
+
 import {Link, Route, Routes} from 'react-router-dom'
-import  ContactUs  from './ContactUs'
-import AboutUs from './AboutUs'
+'
 
 
 
+
+
+import { Facebook, Twitter, Apple, Google } from 'react-bootstrap-icons'
+import styled from 'styled-components'
 function Footer() {
     return (
         <Wrap>
@@ -26,6 +30,7 @@ function Footer() {
                         <Facebook />
                         <Twitter />
                         <Apple />
+                        <Google />
                     </div>
                 </div>
             </div>
@@ -41,10 +46,9 @@ export default Footer
 
 // Using styled components
 const Wrap = styled.div`
-    background-color: black;
-
 
     .footer-container {
+        background-color: black;
         color: white;
         display: flex;
         flex-direction: column;
@@ -52,7 +56,14 @@ const Wrap = styled.div`
         align-items: center;
         gap: 20px;
         padding: 20px;
-        margin-top: 41%;
+        margin-top: 20px;
+position:fixed;
+width: 100%
+top:0;
+bottom:0;
+left:0;
+right:0;
+
     }
 
     .footer-content {
@@ -72,27 +83,63 @@ const Wrap = styled.div`
         display: flex;
         gap: 20px;
     }
+
     .link{
         text-decoration: none;
     }
-    @media screen and (max-width: 900px) {
-        .footer-content {
+  
 
-            margin-top: 70%;
-        }}
+
+
     @media screen and (max-width: 768px) {
         .footer-content {
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin-top: 50%;
+            position:fixed;
+
+
+
+margin-bottom:210px ;
+margin-top:150px;
+padding-bottom:100px;
+
         }
         .footer-text {
-            margin-bottom: 20px;
+   gap: 0px;
             flex-direction: column;
+
         }
         .footer-copyright {
             text-align: center;
         }
     }
 `
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

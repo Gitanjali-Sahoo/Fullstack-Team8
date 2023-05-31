@@ -8,6 +8,8 @@ import cors from 'cors'
 import bodyParser from 'body-parser'
 
 const app = express()
+// app.use(express.static('/frontend/src/assets'))
+// Serve static images from the "assets/images" directory
 
 // Dotenv
 config()
@@ -58,7 +60,8 @@ app.get('/users', async (req, res) => {
 })
 
 
-// //Persons Post
+// //Persons Post for signup form
+
 app.post('/users/submit-form', async (req, res) => {
     const { name, email, password } = req.body
     try {
@@ -67,6 +70,53 @@ app.post('/users/submit-form', async (req, res) => {
             [name, email, password]
         )
         res.sendStatus(201)
+    } catch (err) {
+        console.error(err)
+        res.sendStatus(500).json({ error: 'An error occurred during sign-up' })
+    }
+})
+
+//Signin form post method
+
+app.post('/signin', (req, res) => {
+    const { email, password } = req.body
+
+    // Query the database to check user credentials
+    client.query(
+        'SELECT * FROM users WHERE email = $1',
+        [email],
+        (err, result) => {
+            if (err) {
+                console.error('Error executing query', err)
+                res.status(500).json({
+                    success: false,
+                    error: 'Internal Server Error'
+                })
+            } else {
+                const user = result.rows[0]
+
+                if (!user || user.password !== password) {
+                    res.status(401).json({
+                        success: false,
+                        error: 'Invalid email or password'
+                    })
+                } else {
+                    // Successful sign-in
+                    res.status(200).json({ success: true })
+                }
+            }
+        }
+    )
+})
+
+//Product page
+
+//get method for laptops
+
+app.get('/laptops', async (req, res) => {
+    try {
+        const result = await client.query('SELECT * FROM laptops')
+        res.json(result.rows)
     } catch (err) {
         console.error(err)
         res.sendStatus(500)
