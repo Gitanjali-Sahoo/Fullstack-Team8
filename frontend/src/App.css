@@ -39,7 +39,7 @@
 
 .hero-text {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     row-gap: 50px;
     position: absolute;
     top: 50%;
@@ -76,45 +76,13 @@
 
 .toggler-icon{
     color: white;
-    /* float: right;
-    justify-content: flex-end; */
 }
 
-
-/* About Us  */
-.container{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    /* margin-top: 10px; */
-    height: 80vh;
-}
-
-.aboutUs-img{
-    display: flex;
-    /* flex-direction: row; */
-    align-items: center;
-    width: 30%;
-    height: 450px;
-    border: solid 1px rgb(248, 237, 138);
-    margin: 40px auto;
-    right: 400px;
+/* .me-3, */
+/* #navbar-icon, .dropdown{
     position: relative;
-}
-
-.img-about{
-    height: 300px;
-    width: 400px;
-    position: relative;
-    left: 40px;
-}
-.aboutUs-txt{
-    bottom: 250px;
-    left: 300px;
-    position: relative;
-}
-
+    left: 380px;
+} */
 
 
 /* NavBar Icons */

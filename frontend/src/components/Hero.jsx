@@ -6,7 +6,7 @@ import headphone from '../assets/images/headphone.jpg'
 function Hero () {
 
     return (
-        <div  >
+      
 
             <div className="hero-container">
 
