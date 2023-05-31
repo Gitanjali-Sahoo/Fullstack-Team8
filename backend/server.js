@@ -3,7 +3,7 @@ import { config } from 'dotenv'
 import pkg from 'pg'
 const { Client } = pkg
 
-import express from 'express'
+import express, { request, response } from 'express'
 import cors from 'cors'
 import bodyParser from 'body-parser'
 
@@ -59,7 +59,9 @@ app.get('/users', async (req, res) => {
     }
 })
 
+
 // //Persons Post for signup form
+
 app.post('/users/submit-form', async (req, res) => {
     const { name, email, password } = req.body
     try {
@@ -118,6 +120,86 @@ app.get('/laptops', async (req, res) => {
     } catch (err) {
         console.error(err)
         res.sendStatus(500)
+    }
+})
+
+
+//HEADPHONES PRODUCTS
+app.get('/headPhones', async (request, response) =>{
+    const { title, price, image } = request.body;
+    try {
+        await client.query(
+            'INSERT INTO headPhone (title, price, image) VALUES ($1, $2, $3)',
+            [title, price, image]
+        );
+        response.json(result.rows)
+    } catch (error) {
+        console.error(error)
+        response.sendStatus(500)
+    }
+})
+app.post('/headPhone', async (request, response) =>{
+    try {
+        await client.query(
+            'INSERT INTO headPhone (title, price, image) VALUES ($1, $2, $3)',
+            [title, price, image]
+        )
+        response.sendStatus(201)
+    } catch (error) {
+        console.error(error)
+        response.sendStatus(500)
+    }
+})
+
+app.put("/headPhone/:id", async (request, response) =>{
+    const id = request.params.id;
+    const {title, image, price } = request.body
+try{
+    const update = await client.query(
+        'UPDATE headPhone SET title = $2, price = $3, image = $4 WHERE id = $1')
+    [id,title, price, image]
+    response.json('Successfully update')
+    response.sendStatus(201)
+} catch (error) {
+    console.error(error)
+    response.sendStatus(500)
+}
+})
+
+app.delete("/headPhone/:id", async (request, response) =>{
+try{
+    const id = request.params.id;
+    const dalete = await client.query
+    ('DELETE FROM headPhone WHERE id = $1')
+    const deleteValues = [id]
+    await client.query(deleteQuery, deleteValues)
+} catch (error) {
+    console.error(error)
+    response.sendStatus(500)
+}
+})
+
+//CONTACT US
+app.get('/userInfo', async (request, response) =>{
+    try {
+        const result = await client.query('SELECT * FROM userInfo')
+        response.json(result.rows)
+    } catch (error) {
+        console.error(error)
+        response.sendStatus(500)
+    }
+})
+app.post('/userInfo', async (request, response) =>{
+    const { title, price, image } = request.body;
+    try {
+        await client.query(
+            'INSERT INTO userInfo (title, price, image) VALUES ($1, $2, $3)',
+            [title, price, image]
+        )
+        response.sendStatus(201)
+    } catch (error) {
+        console.error(error)
+        response.sendStatus(500)
     }
 })
 
