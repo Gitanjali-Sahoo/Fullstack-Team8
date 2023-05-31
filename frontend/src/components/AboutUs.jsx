@@ -124,7 +124,7 @@ const AboutUs = () => {
     )
 }
 
-export default AboutUs
+export default AboutUs;
 
 const DIV = styled.div`
     .container {

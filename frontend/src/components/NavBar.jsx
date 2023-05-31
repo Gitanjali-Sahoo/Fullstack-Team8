@@ -8,6 +8,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faUserPlus, faCartPlus} from '@fortawesome/free-solid-svg-icons';
 
 
+
+
 function NavScrollExample() {
     const Style = {
         color: "#ffffff",
