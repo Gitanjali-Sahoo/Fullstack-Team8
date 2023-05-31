@@ -5,16 +5,7 @@ import axios from "axios"
 
 
 export const ContactUs = () => {
-// const [info, setInfo] = useState([])
-// useEffect(() => {
-//     axios.get("http://localhost:3000")
-//     .then((res) => {
-//         setInfo(res.info)
-//     })
-//     .catch((error) => {
-//         console.log("error", error);
-// })
-// },[]);
+
 
   const [data, setData] = useState({name:'', email:'', message:'' });
     const handleChange = (e) =>{
@@ -22,12 +13,6 @@ export const ContactUs = () => {
     const value = e.target.value
     setData({...data, [name]:value})
 }
-
-// const handleSubmit = (e) =>{
-// e.preventDefault();
-// console.log(data)
-//     }
-
 
 const handleSubmit = (e) => {
     e.preventDefault();
@@ -41,25 +26,6 @@ const handleSubmit = (e) => {
         console.log("error", error);
       });
   };
-//   2 for handleSubmit
-// const [data, setData] = useState();
-// const handleSubmit = async e => {
-//     e.preventDefault();
-// try {
-//     const body = {data}
-//     const response = await fetch("http://localhost:3000/userInfo",{
-// method: "POST",
-// headers: { "Content-Type": "applicatopn/json"},
-// body: JSON.stringify(body)
-//     })
-//     console.log(response);
-// } catch(error) {
-//     console.log("error", error);
-//   }
-// }
-
-
-
   return (
     <DIV>
     <div className="container-aboutUs">

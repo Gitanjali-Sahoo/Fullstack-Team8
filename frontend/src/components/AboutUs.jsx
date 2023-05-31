@@ -1,104 +1,33 @@
-// // function AboutUs() {
-// //     return (
-// //       <div className="container">
-// //            <h1 className="aboutUs-title">About Us</h1>
-// //   <div className="aboutUs-img">
-// //   <img src='./src/images/AboutUs-img.jpeg' alt="navbar-logo " className="img-about"/>
-// //   </div>
-// //   <div>
-// //   <p className="aboutUs-txt">Lorem ipsum dolor sit amet
-// //    consectetur adipisicing elit. Incidunt, ducimus fugiat ametz
-// //     odit aliquam ipsum et corrupti deleniti eum exercitationem?
-// //      Consectetur quaerat harum officiis culpa repellat aliquid
-// //       minus ratione eius dolor vitae incidunt qui
-// //     tempora similique esse facilis, dolorum non.</p>
-// //   </div>
-// //       </div>
-// //     )
-// //   }
-
-// //   export default AboutUs
-
-// export const AboutUs = () => {
-//      const container ={
-// width: '60%',
-// marginTop:'50px',
-// // padding:'20px'
-//     }
-
-//     const gridContainer ={
-// display: 'grid',
-// gridTemplateColumns: 'repeat(3, 1fr)',
-// // padding: '10px',
-// gap: '30px',
-//     }
-
-//     const img={
-//         width: '100%',
-//         height: 'auto',
-//     }
-
-//   return (
-
-//     <div className="container" style={container}>
-//         <h2>About Us</h2>
-
-//         <div >
-//             We are agroup of FrontEnd-developers who designed and
-//             programmed this store to make it
-//             easier for customers to shop for a group of distinctive goods
-//             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, temporibus!
-//                 </div>
-
-// <div className="grid-container" style={gridContainer}>
-//      <div>  <img src="./src/images/pic.png" style={img} ></img>
-//      <h5>Sara FrontEnd-developer</h5>
-//      </div>
-
-//     <div> <img src="./src/images/pic.png" style={img} ></img>
-//     <h5 >Gitanijali FrontEnd-developer</h5>
-//     </div>
-
-//     <div><img src="./src/images/pic.png" style={img} ></img>
-//     <h5>Shahad FrontEnd-developer</h5>
-//     </div>
-// </div>
-
-//       </div>
-//   )
-// }
-
-//  export default AboutUs
-
 import styled from 'styled-components'
 
-const AboutUsProps = () => {
+const AboutUsProps = (props) => {
     return (
         <DIV>
             <div className="container">
-                <h2>{this.props.title}</h2>
-                <div>{this.props.txt}</div>
+                <h2>{props.title}</h2>
+                <div>{props.txt}</div>
 
                 <div className="grid-container">
                     <div className="ourPhotos">
-                        <img src={this.props.src} />
-                        <p> {this.props.firstName} </p>
+                        <img src={props.src} />
+                        <p> {props.firstName} </p>
                     </div>
 
                     <div>
-                        <img src={this.props.src} />
-                        <p>{this.props.secondName}</p>
+                        <img src={props.src} />
+                        <p>{props.secondName}</p>
                     </div>
 
                     <div>
-                        <img src={this.props.src} />
-                        <p> {this.props.thirdName} </p>
+                        <img src={props.src} />
+                        <p> {props.thirdName} </p>
                     </div>
                 </div>
             </div>
         </DIV>
     )
 }
+
 
 const AboutUs = () => {
     return (
