@@ -40,7 +40,7 @@
 
 .hero-text {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     row-gap: 50px;
     position: absolute;
     top: 30%;
@@ -70,6 +70,7 @@
 
 /* Keyframes to routate the hero */
 
+
 @keyframes rotate {
     20% {
         transform: translate(-30%, -60%) rotate(0deg);
@@ -95,6 +96,7 @@
     100% {
         opacity: 0;
         transform: scale(1);
+
     }
 }
 

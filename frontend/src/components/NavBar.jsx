@@ -14,8 +14,13 @@ import { faMagnifyingGlass, faUserPlus, faCartPlus} from '@fortawesome/free-soli
 
 
 
+
+
+
+
 // eslint-disable-next-line react/prop-types
 function NavScrollExample({ onIconClicked }) {
+
 
     const Style = {
         color: "#ffffff",
@@ -40,7 +45,7 @@ function NavScrollExample({ onIconClicked }) {
 
 
   return (
-    // <Navbar collapseOnSelect expand="lg"  variant="dark">
+   
 <>
 
           <div>
@@ -79,15 +84,7 @@ function NavScrollExample({ onIconClicked }) {
           </Form>
        </Navbar.Collapse>
           </Container>
-           <div>
-
-      </div>
-   <div>
-
-            </div>
-          <div>
-
-              </div>
+           
 
       </Navbar>
 

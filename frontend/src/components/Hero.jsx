@@ -1,5 +1,4 @@
 
-//import the headphone image
 import headphone from "../assets/images/headphone.jpg";
 
 
@@ -29,6 +28,7 @@ Your Destination for High-Tech Wonders.</p>
                 </div>
 
                 </div>
+
 
 
 
