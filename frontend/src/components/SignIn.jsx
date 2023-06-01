@@ -70,19 +70,8 @@ function SignIn() {
                         <Google onClick={googleRedirect} />
                     </div>
 
-                    <div className="form" id="form" >
-                        <label> Email </label>
-                        <input
-                            type="text"
-                            placeholder=" example@gmail.com"
-
-                        />
-                        <label>Password </label>
-                        <input
-                            type="password"
-                            placeholder="***********"
-
-                        />
+                        <h4 onClick={handleShow}  style={{ color: changeColor ?  'white': '#f8df00' }} >Sign up</h4>
+                        <hr />
 
                         <p>Forgot password?</p>
                     </div>
@@ -296,34 +285,41 @@ function SignIn() {
 export default SignIn
 
 const Wrap = styled.div`
-    .form-sign {
-        display: flex;
-        justify-content: center;
-        column-gap: 20px;
-        text-align: center;
-        cursor: pointer;
-    }
+
+.form-sign {
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+    text-align: center;
+    cursor: pointer;
+}
 
     .form-container {
         display: flex;
         flex-direction: column;
         justify-content: center;
 
-        align-items: center;
-        margin-top: 5%;
+    align-items: center;
 
-        width: 500px;
-        margin-left: 34%;
-    }
 
-    .form {
-        display: flex;
-        flex-direction: column;
-        left: 50%;
-        width: 500px;
-        row-gap: 20px;
-        margin-bottom: 30px;
-    }
+
+    width: 500px;
+    margin-left: 34%;
+       margin-top:100px;
+
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    left: 50%;
+    width: 500px;
+    row-gap: 20px;
+     margin-bottom:30px;
+
+
+
+}
 
     .form input {
         border: #ffffff 1px solid;

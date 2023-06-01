@@ -57,6 +57,9 @@ function SignUp() {
         setShowForm(false)
         sethideForm(true)
         setChangeColor(false)
+
+
+
     }
 
     // Event to redirect user to different links
@@ -167,8 +170,8 @@ const Wrap = styled.div`
         flex-direction: column;
         justify-content: center;
 
-        align-items: center;
-        margin-top: 5%;
+    align-items: center;
+
 
         width: 500px;
         margin-left: 34%;

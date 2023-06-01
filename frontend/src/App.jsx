@@ -1,25 +1,21 @@
+import { useState } from 'react'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
-// import Footer from './components/Footer'
-import NavBar from './components/NavBar'
-import { Routes, Route } from 'react-router-dom'
-import Products from './components/Products'
-import Home from '../Pages/Home'
-import SignIn from './components/SignIn'
 import Footer from './components/Footer'
+import NavBar from './components/NavBar'
+import Hero from './components/Hero'
+
 function App() {
+    const [showHero, setShowHero] = useState(true)
+
+    const handleIconClicked = () => {
+        setShowHero(false)
+    }
+
     return (
         <>
-            <NavBar />
-            {/* <Hero /> */}
-            {/* <Products /> */}
-            {/* <SignIn /> */}
-
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/laptop" element={<Products />} />
-                <Route path="/signin" element={<SignIn/>}/>
-            </Routes>
+            <NavBar onIconClicked={handleIconClicked} />
+            {showHero && <Hero />}
             <Footer />
         </>
     )
