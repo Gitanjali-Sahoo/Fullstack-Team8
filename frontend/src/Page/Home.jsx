@@ -1,8 +1,13 @@
-import Hero from '../src/components/Hero'
+
+import Hero from "../components/Hero"
+
+
 
 function Home() {
   return (
     <Hero/>
+
+
   )
 }
 

@@ -121,6 +121,23 @@ app.get('/laptops', async (req, res) => {
     }
 })
 
+// Retrieve product details by ID
+app.get('/laptops/:id', (req, res) => {
+    const laptopId = req.params.id
+
+    // Perform the database query to retrieve the product details based on the ID
+    client
+        .query('SELECT * FROM laptops WHERE id = $1', [laptopId])
+        .then((result) => {
+            const laptop = result.rows[0]
+            res.json(laptop)
+        })
+        .catch((error) => {
+            console.error('Error retrieving product:', error)
+            res.status(500).json({ error: 'Failed to retrieve product' })
+        })
+})
+
 app.listen(3000, () => {
     console.log('Server is running')
 })

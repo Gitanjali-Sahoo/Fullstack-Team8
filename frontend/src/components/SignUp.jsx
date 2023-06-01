@@ -57,9 +57,6 @@ function SignUp() {
         setShowForm(false)
         sethideForm(true)
         setChangeColor(false)
-
-
-
     }
 
     // Event to redirect user to different links
@@ -170,8 +167,7 @@ const Wrap = styled.div`
         flex-direction: column;
         justify-content: center;
 
-    align-items: center;
-
+        align-items: center;
 
         width: 500px;
         margin-left: 34%;
@@ -209,6 +205,9 @@ const Wrap = styled.div`
         font-weight: 700;
         text-align: center;
         border: none;
+    }
+    .form-submit {
+        margin: 40px auto; /* Center horizontally */
     }
 
     .icons {

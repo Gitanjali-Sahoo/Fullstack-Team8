@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card'
 import styled from 'styled-components'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 function Products() {
     const [data, setData] = useState([])
@@ -31,9 +32,15 @@ function Products() {
                             alt={laptop.brand}
                         />
                         <Card.Body>
-                            <Card.Title className="product-text">
+                            {/* <Card.Title className="product-text">
                                 {laptop.model}
-                            </Card.Title>
+                            </Card.Title> */}
+
+                            <Link to={`/laptop/${laptop.id}`}>
+                                <Card.Title className="product-text">
+                                    {laptop.model}
+                                </Card.Title>
+                            </Link>
                             <Card.Text>SEK {laptop.price} </Card.Text>
                             <Button className="card-btn" variant="light">
                                 Add to cart
@@ -56,6 +63,9 @@ const Wrap = styled.div`
         justify-content: center;
         align-items: center;
         padding: 10px 60px;
+        scroll-behavior: smooth;
+        overflow-y: auto; /* Enable vertical scrolling */
+        max-height: 100%; /* Set a maximum height for scrolling */
     }
 
     @media (max-width: 1200px) {

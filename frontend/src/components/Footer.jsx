@@ -1,5 +1,3 @@
-
-
 import { Facebook, Twitter, Apple, Google } from 'react-bootstrap-icons'
 import styled from 'styled-components'
 function Footer() {
@@ -33,7 +31,6 @@ export default Footer
 
 // Using styled components
 const Wrap = styled.div`
-
     .footer-container {
         background-color: black;
         color: white;
@@ -44,13 +41,13 @@ const Wrap = styled.div`
         gap: 20px;
         padding: 20px;
         margin-top: 20px;
-position:fixed;
-width: 100%
-top:0;
-bottom:0;
-left:0;
-right:0;
 
+        position: fixed;
+        /* width: 100% */
+        /* top: 0; */
+        bottom: 0;
+        left: 0;
+        right: 0;
     }
 
     .footer-content {
@@ -69,27 +66,22 @@ right:0;
     .footer-icon {
         display: flex;
         gap: 20px;
-    }<<<<<<< Gitanjali
-
-
+    }
 
     @media screen and (max-width: 768px) {
         .footer-content {
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            position: fixed;
 
-    @media screen and (min-width: 768px) {
-        .footer-container {
-            flex-direction: row;
-
-
-
+            margin-bottom: 210px;
+            margin-top: 150px;
+            padding-bottom: 100px;
         }
         .footer-text {
-   gap: 0px;
+            gap: 0px;
             flex-direction: column;
-
         }
         .footer-copyright {
             text-align: center;
