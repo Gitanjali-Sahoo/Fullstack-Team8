@@ -1,5 +1,4 @@
 
-//import the headphone image
 import headphone from "../assets/images/headphone.jpg";
 
 

@@ -1,3 +1,16 @@
+
+
+
+
+
+import {Link, Route, Routes} from 'react-router-dom'
+'
+
+
+
+
+
+
 import { Facebook, Twitter, Apple, Google } from 'react-bootstrap-icons'
 import styled from 'styled-components'
 function Footer() {
@@ -6,8 +19,8 @@ function Footer() {
             <div className="footer-container">
                 <div className="footer-content">
                     <div className="footer-text">
-                        <p>Contact Us</p>
-                        <p>About Us</p>
+                       <Link to="/contactUs"  className='link'><p>Contact Us</p></Link>
+                       <Link to="/aboutUs" className='link'> <p>About Us</p></Link>
                     </div>
                     <div className="footer-copyright">
                         <p>
@@ -23,7 +36,11 @@ function Footer() {
                     </div>
                 </div>
             </div>
-        </Wrap>
+            <Routes>
+            <Route path="/contactUs" element={< ContactUs />}> </Route>
+            <Route path="/aboutUs" element={< AboutUs />}></Route>
+            </Routes>
+         </Wrap>
     )
 }
 
@@ -67,6 +84,15 @@ const Wrap = styled.div`
         display: flex;
         gap: 20px;
     }
+
+
+    .link{
+        text-decoration: none;
+    }
+  
+
+
+
 
     @media screen and (max-width: 768px) {
         .footer-content {

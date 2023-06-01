@@ -1,3 +1,4 @@
+
 // import { useState } from 'react'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -10,6 +11,7 @@ import Home from './Page/Home'
 import ProductDetails from './components/ProductDetails'
 import SignIn from './components/SignIn'
 import Cart from './components/Cart'
+
 
 function App() {
     //Sara code
@@ -25,6 +27,7 @@ function App() {
             {showHero && <Hero />} */}
             <NavBar />
 
+
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/laptop" element={<Products />} />
@@ -35,6 +38,7 @@ function App() {
             <Footer />
         </>
     )
+
 }
 
 export default App

@@ -3,7 +3,7 @@ import { config } from 'dotenv'
 import pkg from 'pg'
 const { Client } = pkg
 
-import express from 'express'
+import express, { request, response } from 'express'
 import cors from 'cors'
 import bodyParser from 'body-parser'
 
@@ -59,7 +59,9 @@ app.get('/users', async (req, res) => {
     }
 })
 
+
 // //Persons Post for signup form
+
 app.post('/users/submit-form', async (req, res) => {
     const { name, email, password } = req.body
     try {
@@ -121,6 +123,7 @@ app.get('/laptops', async (req, res) => {
     }
 })
 
+
 // Retrieve product details by ID
 app.get('/laptops/:id', (req, res) => {
     const laptopId = req.params.id
@@ -136,6 +139,92 @@ app.get('/laptops/:id', (req, res) => {
             console.error('Error retrieving product:', error)
             res.status(500).json({ error: 'Failed to retrieve product' })
         })
+
+
+//HEADPHONES PRODUCTS
+app.get('/headPhones', async (request, response) =>{
+
+    try {
+
+        const result = await client.query('SELECT * FROM headphone')
+
+          // [id, brand, model, price, image]
+
+        response.json(result.rows)
+    } catch (error) {
+        console.error(error)
+        response.sendStatus(500)
+    }
+})
+app.post('/headPhone', async (request, response) =>{
+    try {
+         const { id, brand, model, price, image} = request.body;
+      await client.query(
+  'INSERT INTO headphone (id, brand, model, price, image) VALUES ($1, $2, $3, $4, $5)',
+  [id, brand, model, price, image]
+);
+
+        response.sendStatus(201)
+    } catch (error) {
+        console.error(error)
+        response.sendStatus(500)
+    }
+})
+
+app.put("/headPhone/:id", async (request, response) =>{
+    const id = request.params.id;
+    const { brand, model, price, image} = request.body
+try{
+    const update = await client.query(
+        'UPDATE headphone SET brand = $2, model = $3, price = $4 ,  image =$5 WHERE id = $1',
+    [id, brand, model, price, image]
+    )
+    response.json('Successfully update')
+    response.sendStatus(201)
+} catch (error) {
+    console.error(error)
+    response.sendStatus(500)
+}
+})
+
+app.delete("/headPhone/:id", async (request, response) =>{
+try{
+    const id = request.params.id;
+    const deleteQuery = 'DELETE FROM headphone WHERE id = $1';
+    const deleteValues = [id]
+    await client.query(deleteQuery, deleteValues)
+    response.json('Successfully')
+    response.sendStatus(201)
+} catch (error) {
+    console.error(error)
+    response.sendStatus(500)
+}
+})
+
+//CONTACT US
+app.get('/userInfo', async (request, response) =>{
+    try {
+        const result = await client.query('SELECT * FROM contactUs')
+        response.json(result.rows)
+    } catch (error) {
+        console.error(error)
+        response.sendStatus(500)
+    }
+})
+app.post('/userInfo', async (request, response) =>{
+
+    try {
+        const {name, email, message } = request.body;
+        await client.query(
+            'INSERT INTO contactUs (name, email, message) VALUES ($1, $2, $3)',
+            [name, email, message]
+        )
+        response.sendStatus(201)
+    } catch (error) {
+        console.error(error)
+        response.sendStatus(500)
+    }
+
 })
 
 app.listen(3000, () => {
