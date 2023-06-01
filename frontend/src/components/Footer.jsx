@@ -2,8 +2,10 @@
 
 
 
+
 import {Link, Route, Routes} from 'react-router-dom'
 '
+
 
 
 
@@ -46,7 +48,6 @@ export default Footer
 
 // Using styled components
 const Wrap = styled.div`
-
     .footer-container {
         background-color: black;
         color: white;
@@ -57,13 +58,13 @@ const Wrap = styled.div`
         gap: 20px;
         padding: 20px;
         margin-top: 20px;
-position:fixed;
-width: 100%
-top:0;
-bottom:0;
-left:0;
-right:0;
 
+        position: fixed;
+        /* width: 100% */
+        /* top: 0; */
+        bottom: 0;
+        left: 0;
+        right: 0;
     }
 
     .footer-content {
@@ -84,10 +85,12 @@ right:0;
         gap: 20px;
     }
 
+
     .link{
         text-decoration: none;
     }
   
+
 
 
 
@@ -96,50 +99,18 @@ right:0;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            position:fixed;
+            position: fixed;
 
-
-
-margin-bottom:210px ;
-margin-top:150px;
-padding-bottom:100px;
-
+            margin-bottom: 210px;
+            margin-top: 150px;
+            padding-bottom: 100px;
         }
         .footer-text {
-   gap: 0px;
+            gap: 0px;
             flex-direction: column;
-
         }
         .footer-copyright {
             text-align: center;
         }
     }
 `
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
