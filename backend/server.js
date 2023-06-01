@@ -126,12 +126,13 @@ app.get('/laptops', async (req, res) => {
 
 //HEADPHONES PRODUCTS
 app.get('/headPhones', async (request, response) =>{
-    const { title, price, image } = request.body;
+
     try {
-        await client.query(
-            'INSERT INTO headPhone (title, price, image) VALUES ($1, $2, $3)',
-            [title, price, image]
-        );
+
+        const result = await client.query('SELECT * FROM headphone')
+
+          // [id, brand, model, price, image]
+
         response.json(result.rows)
     } catch (error) {
         console.error(error)
@@ -140,10 +141,12 @@ app.get('/headPhones', async (request, response) =>{
 })
 app.post('/headPhone', async (request, response) =>{
     try {
-        await client.query(
-            'INSERT INTO headPhone (title, price, image) VALUES ($1, $2, $3)',
-            [title, price, image]
-        )
+         const { id, brand, model, price, image} = request.body;
+      await client.query(
+  'INSERT INTO headphone (id, brand, model, price, image) VALUES ($1, $2, $3, $4, $5)',
+  [id, brand, model, price, image]
+);
+
         response.sendStatus(201)
     } catch (error) {
         console.error(error)
@@ -153,11 +156,12 @@ app.post('/headPhone', async (request, response) =>{
 
 app.put("/headPhone/:id", async (request, response) =>{
     const id = request.params.id;
-    const {title, image, price } = request.body
+    const { brand, model, price, image} = request.body
 try{
     const update = await client.query(
-        'UPDATE headPhone SET title = $2, price = $3, image = $4 WHERE id = $1')
-    [id,title, price, image]
+        'UPDATE headphone SET brand = $2, model = $3, price = $4 ,  image =$5 WHERE id = $1',
+    [id, brand, model, price, image]
+    )
     response.json('Successfully update')
     response.sendStatus(201)
 } catch (error) {
@@ -169,10 +173,11 @@ try{
 app.delete("/headPhone/:id", async (request, response) =>{
 try{
     const id = request.params.id;
-    const dalete = await client.query
-    ('DELETE FROM headPhone WHERE id = $1')
+    const deleteQuery = 'DELETE FROM headphone WHERE id = $1';
     const deleteValues = [id]
     await client.query(deleteQuery, deleteValues)
+    response.json('Successfully')
+    response.sendStatus(201)
 } catch (error) {
     console.error(error)
     response.sendStatus(500)
@@ -182,7 +187,7 @@ try{
 //CONTACT US
 app.get('/userInfo', async (request, response) =>{
     try {
-        const result = await client.query('SELECT * FROM userInfo')
+        const result = await client.query('SELECT * FROM contactUs')
         response.json(result.rows)
     } catch (error) {
         console.error(error)
@@ -190,11 +195,12 @@ app.get('/userInfo', async (request, response) =>{
     }
 })
 app.post('/userInfo', async (request, response) =>{
-    const { title, price, image } = request.body;
+
     try {
+        const {name, email, message } = request.body;
         await client.query(
-            'INSERT INTO userInfo (title, price, image) VALUES ($1, $2, $3)',
-            [title, price, image]
+            'INSERT INTO contactUs (name, email, message) VALUES ($1, $2, $3)',
+            [name, email, message]
         )
         response.sendStatus(201)
     } catch (error) {
