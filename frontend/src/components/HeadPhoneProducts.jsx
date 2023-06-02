@@ -16,7 +16,6 @@ const HeadPhoneProducts = () => {
           });
       }, []);
 
-
   return (
     <DIV>
         <div className='container'>
