@@ -1,6 +1,16 @@
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 const AboutUsProps = (props) => {
+    AboutUsProps.propTypes = {
+        src: PropTypes.string,
+        firstName: PropTypes.string,
+        secondName: PropTypes.string,
+        thirdName:   PropTypes.string,
+        title: PropTypes.string,
+        txt: PropTypes.string
+
+      }
     return (
         <DIV>
             <div className="container">
