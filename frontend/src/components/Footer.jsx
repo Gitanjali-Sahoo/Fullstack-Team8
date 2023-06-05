@@ -1,13 +1,6 @@
-
-
-
-
+import ContactUs from './ContactUs'
+import AboutUs from './AboutUs'
 import {Link, Route, Routes} from 'react-router-dom'
-'
-
-
-
-
 
 import { Facebook, Twitter, Apple, Google } from 'react-bootstrap-icons'
 import styled from 'styled-components'
@@ -87,7 +80,7 @@ right:0;
     .link{
         text-decoration: none;
     }
-  
+
 
 
 
@@ -115,31 +108,3 @@ padding-bottom:100px;
         }
     }
 `
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
