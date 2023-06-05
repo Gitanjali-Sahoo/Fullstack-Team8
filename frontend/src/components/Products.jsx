@@ -10,7 +10,7 @@ function Products() {
 
     useEffect(() => {
         axios
-            .get('http://localhost:3000/laptops')
+            .get('http://localhost:3000/laptops1')
             .then((response) => {
                 setData(response.data)
             })
@@ -28,7 +28,7 @@ function Products() {
                         <Card.Img
                             className="laptop-img"
                             variant="top"
-                            src={`/image/${laptop.image}`}
+                            src={laptop.image}
                             alt={laptop.brand}
                         />
                         <Card.Body>

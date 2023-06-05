@@ -1,4 +1,9 @@
+
+import ContactUs from './ContactUs'
+import AboutUs from './AboutUs'
+
 import { Link } from 'react-router-dom'
+
 import { Facebook, Twitter, Apple, Google } from 'react-bootstrap-icons'
 import styled from 'styled-components'
 
@@ -75,6 +80,7 @@ const Wrap = styled.div`
     .link {
         text-decoration: none;
     }
+
 
     @media screen and (max-width: 768px) {
         .footer-content {
