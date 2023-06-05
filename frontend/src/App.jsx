@@ -14,6 +14,7 @@ import Cart from './components/Cart'
 import BillingAddress from './components/BillingAddress'
 import ContactUs from './components/ContactUs'
 import AboutUs from './components/AboutUs'
+import HeadPhoneProducts from './components/HeadPhoneProducts'
 
 function App() {
     //Sara code
@@ -33,6 +34,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/laptop" element={<Products />} />
+                <Route path="/headphone" element={<HeadPhoneProducts />}></Route>
                 <Route path="/laptop/:id" element={<ProductDetails />} />
                 <Route path="/signin" element={<SignIn />} />
 

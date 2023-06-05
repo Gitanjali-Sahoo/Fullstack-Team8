@@ -21,10 +21,15 @@ function Products() {
 
     return (
         <Wrap>
-            <h1>Laptop</h1>
             <div className="laptop-container">
                 {data.map((laptop) => (
                     <Card key={laptop.id} className="laptop-card">
+                        {/* <Card.Img
+                            className="laptop-img"
+                            variant="top"
+                            src={laptop.image}
+                            alt={laptop.brand}
+                        /> */}
                         <Card.Img
                             className="laptop-img"
                             variant="top"
@@ -32,10 +37,6 @@ function Products() {
                             alt={laptop.brand}
                         />
                         <Card.Body>
-                            {/* <Card.Title className="product-text">
-                                {laptop.model}
-                            </Card.Title> */}
-
                             <Link to={`/laptop/${laptop.id}`}>
                                 <Card.Title className="product-text">
                                     {laptop.model}
