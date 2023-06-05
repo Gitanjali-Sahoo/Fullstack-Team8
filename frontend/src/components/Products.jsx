@@ -27,7 +27,7 @@ function Products() {
                         {/* <Card.Img
                             className="laptop-img"
                             variant="top"
-                            src={`/image/${laptop.image}`}
+                            src={laptop.image}
                             alt={laptop.brand}
                         /> */}
                         <Card.Img
