@@ -28,7 +28,6 @@ const AboutUsProps = (props) => {
     )
 }
 
-
 const AboutUs = () => {
     return (
         <div className="container">
@@ -53,7 +52,7 @@ const AboutUs = () => {
     )
 }
 
-export default AboutUs;
+export default AboutUs
 
 const DIV = styled.div`
     .container {

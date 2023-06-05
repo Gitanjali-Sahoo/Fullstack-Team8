@@ -1,5 +1,6 @@
 //import the headphone image
 import headphone from '../assets/images/headphone.jpg'
+import { Link } from 'react-router-dom'
 
 const Cart = () => {
     return (
@@ -17,7 +18,9 @@ const Cart = () => {
                     <div id="cart-btn">
                         {' '}
                         <button> Qyt: 1</button>
-                        <button id="checkout">Checkout</button>
+                        <Link to="/billing">
+                            <button id="checkout">Checkout</button>
+                        </Link>
                     </div>
                 </div>
             </div>
