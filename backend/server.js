@@ -109,7 +109,7 @@ app.post('/signin', (req, res) => {
 
 //Product page
 
-//get method for laptops
+/*get method for laptops
 
 app.get('/laptops', async (req, res) => {
     try {
@@ -136,6 +136,63 @@ app.get('/laptops/:id', (req, res) => {
             console.error('Error retrieving product:', error)
             res.status(500).json({ error: 'Failed to retrieve product' })
         })
+}) */
+
+//New database for laptop using link for images
+
+app.get('/laptops1', async (req, res) => {
+    try {
+        const result = await client.query('SELECT * FROM laptops1')
+
+        res.json(result.rows)
+    } catch (err) {
+        console.error(err)
+
+        res.sendStatus(500)
+    }
+})
+
+//Get method with id
+app.get('/laptops1/:id', (req, res) => {
+    const laptopId = req.params.id
+
+    // Perform the database query to retrieve the product details based on the ID
+
+    client
+
+        .query('SELECT * FROM laptops1 WHERE id = $1', [laptopId])
+
+        .then((result) => {
+            const laptop = result.rows[0]
+
+            res.json(laptop)
+        })
+
+        .catch((error) => {
+            console.error('Error retrieving product:', error)
+
+            res.status(500).json({ error: 'Failed to retrieve product' })
+        })
+})
+
+// Post method
+app.post('/laptops1', async (request, response) => {
+    try {
+        const { id, brand, model, price, image, description, specification } =
+            request.body
+
+        await client.query(
+            'INSERT INTO laptops1 (id, model, brand, price, image, description, specification) VALUES ($1, $2, $3, $4, $5, $6,$7)',
+
+            [id, model, brand, price, image, description, specification]
+        )
+
+        response.sendStatus(201)
+    } catch (error) {
+        console.error(error)
+
+        response.sendStatus(500)
+    }
 })
 
 //HEADPHONES PRODUCTS
