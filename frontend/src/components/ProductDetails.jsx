@@ -149,7 +149,7 @@ const Wrapper = styled.div`
 const Description = styled.div`
     flex: 50%;
     padding-left: 30px;
-    padding-top: 10px;
+    /* padding-top: 10px; */
     background-color: black;
 
     p {
