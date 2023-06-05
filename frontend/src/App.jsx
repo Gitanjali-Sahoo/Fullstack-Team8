@@ -4,16 +4,17 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Footer from './components/Footer'
 import NavBar from './components/NavBar'
 // import Hero from './components/Hero'
-import Products from './components/Products'
+import LaptopProducts from './components/LaptopProducts'
 import { Routes, Route } from 'react-router-dom'
 import Home from './Page/Home'
-import ProductDetails from './components/ProductDetails'
+import ProductDetails from './components/LaptopProductDetails'
 
 import SignIn from './components/SignIn'
 import Cart from './components/Cart'
 import BillingAddress from './components/BillingAddress'
 import ContactUs from './components/ContactUs'
 import AboutUs from './components/AboutUs'
+import HeadPhoneProducts from './components/HeadPhoneProducts'
 
 function App() {
     //Sara code
@@ -32,7 +33,8 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/cart" element={<Cart />} />
-                <Route path="/laptop" element={<Products />} />
+                <Route path="/laptop" element={<LaptopProducts />} />
+                <Route path="/headphone" element={<HeadPhoneProducts />}></Route>
                 <Route path="/laptop/:id" element={<ProductDetails />} />
                 <Route path="/signin" element={<SignIn />} />
 
