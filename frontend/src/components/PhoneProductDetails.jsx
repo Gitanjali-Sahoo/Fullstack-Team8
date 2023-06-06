@@ -6,13 +6,13 @@ import axios from 'axios'
 
 function ProductDetails() {
     const { id } = useParams()
-    const [phones, setPhones] = useState(null)
+    const [phone, setPhone] = useState(null)
 
     useEffect(() => {
         axios
             .get(`http://localhost:3000/smartphones/${id}`)
             .then((response) => {
-                setPhones(response.data)
+                setPhone(response.data)
             })
             .catch((error) => {
                 console.error('Error retrieving product:', error)
@@ -20,20 +20,14 @@ function ProductDetails() {
             })
     }, [id])
 
-    if (!phones) {
+    if (!phone) {
         return <div>Loading...</div>
     }
 
     return (
-           <div className="product-details">
-
-
-
- {phones.map((phone) => (
-        <DetailsWrapper key={phone.id}  className="product">
-
-                 <div  className="image-wrapper">
-
+        <div className="product-details">
+            <DetailsWrapper className="product">
+                <div className="image-wrapper">
                     <img src={phone.image} alt="image" />
                     <button className="offer-btn">
                         EXTRA 20% DISCOUNT. USE CODE EXTRA20
@@ -75,6 +69,8 @@ function ProductDetails() {
 
                     <button>Add to Cart</button>
 
+                    <p style={{ color: 'white' }}></p>
+                    <hr />
 
                     <p>
                         <AlarmFill />
@@ -89,15 +85,12 @@ function ProductDetails() {
                         -Gift wrapping available at checkout
                     </p>
                 </Description>
-                    </DetailsWrapper>
-))}
+            </DetailsWrapper>
         </div>
-
     )
 }
 
 export default ProductDetails
-
 const DetailsWrapper = styled.div`
     display: flex;
     justify-content: center;
@@ -109,11 +102,11 @@ const DetailsWrapper = styled.div`
     align-items: center;
 
     & img {
-        max-width: 100%;
+        max-width: 75%;
         height: 500px;
     }
     & p {
-        font-size: 0.8rem;
+        font-size: 1rem;
     }
 
     .image-wrapper {
@@ -128,6 +121,7 @@ const DetailsWrapper = styled.div`
         border: none;
         color: black;
         font-weight: bold;
+        width:75%;
     }
 
     .offer-btn:hover {
@@ -152,7 +146,7 @@ const Wrapper = styled.div`
 const Description = styled.div`
     flex: 50%;
     padding-left: 30px;
-    padding-top: 10px;
+    /* padding-top: 10px; */
     background-color: black;
 
     p {

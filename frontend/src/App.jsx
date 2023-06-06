@@ -14,7 +14,12 @@ import Cart from './components/Cart'
 import BillingAddress from './components/BillingAddress'
 import ContactUs from './components/ContactUs'
 import AboutUs from './components/AboutUs'
+
+import Smartphones from './components/Smartphones'
+import PhoneProductDetails from './components/PhoneProductDetails'
+
 import HeadPhoneProducts from './components/HeadPhoneProducts'
+
 
 function App() {
     //Sara code
@@ -36,13 +41,16 @@ function App() {
                 <Route path="/laptop" element={<Products />} />
                 <Route path="/headphone" element={<HeadPhoneProducts />}></Route>
                 <Route path="/laptop/:id" element={<ProductDetails />} />
+  <Route path="/phone/:id" element={<PhoneProductDetails />} />
                 <Route path="/signin" element={<SignIn />} />
 
                 <Route path="/billing" element={<BillingAddress />} />
 
-                <Route path="/contactUs" element={<ContactUs />}>
-                    {' '}
-                </Route>
+                <Route path="/contactUs" element={<ContactUs />}>  </Route>
+
+                      <Route path="/smartphones" element={<Smartphones />}></Route>
+
+
                 <Route path="/aboutUs" element={<AboutUs />}></Route>
             </Routes>
             <Footer />
