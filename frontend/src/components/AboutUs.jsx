@@ -84,6 +84,17 @@ const DIV = styled.div`
     img {
         width: 100%;
         height: auto;
-        margin-top: 150px;
+        margin-top: 50px;
+    }
+
+    p{
+        display: flex;
+        justify-content: center;
+    }
+
+    @media (max-width: 550px) {
+        .grid-container {
+            grid-template-columns: repeat(1, 1fr);
+        }
     }
 `
