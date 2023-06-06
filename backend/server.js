@@ -144,6 +144,7 @@ app.get('/laptops1', async (req, res) => {
     try {
         const result = await client.query('SELECT * FROM laptops1')
 
+
         res.json(result.rows)
     } catch (err) {
         console.error(err)
@@ -151,8 +152,24 @@ app.get('/laptops1', async (req, res) => {
         res.sendStatus(500)
     }
 })
+app.post('/laptops1', async (request, response) => {
+    try {
+        const { id, brand, model, price, image, description, specification } =
+            request.body
+        await client.query(
+            'INSERT INTO laptops1 (id, model, brand, price, image, description, specification) VALUES ($1, $2, $3, $4, $5, $6,$7)',
+            [id, model, brand, price, image, description, specification]
+        )
+
+        response.sendStatus(201)
+    } catch (error) {
+        console.error(error)
+        response.sendStatus(500)
+    }
+})
 
 //Get method with id
+
 app.get('/laptops1/:id', (req, res) => {
     const laptopId = req.params.id
 
@@ -161,6 +178,8 @@ app.get('/laptops1/:id', (req, res) => {
     client
 
         .query('SELECT * FROM laptops1 WHERE id = $1', [laptopId])
+
+
 
         .then((result) => {
             const laptop = result.rows[0]
@@ -175,34 +194,23 @@ app.get('/laptops1/:id', (req, res) => {
         })
 })
 
-// Post method
-app.post('/laptops1', async (request, response) => {
-    try {
-        const { id, brand, model, price, image, description, specification } =
-            request.body
-
-        await client.query(
-            'INSERT INTO laptops1 (id, model, brand, price, image, description, specification) VALUES ($1, $2, $3, $4, $5, $6,$7)',
-
-            [id, model, brand, price, image, description, specification]
-        )
-
-        response.sendStatus(201)
-    } catch (error) {
-        console.error(error)
-
-        response.sendStatus(500)
-    }
-})
 
 //HEADPHONES PRODUCTS
 app.get('/headPhones', async (request, response) => {
+
     const { title, price, image } = request.body
     try {
         await client.query(
             'INSERT INTO headPhone (title, price, image) VALUES ($1, $2, $3)',
             [title, price, image]
         )
+
+
+ 
+
+    try {
+        const result = await client.query('SELECT * FROM headphone')
+
         response.json(result.rows)
     } catch (error) {
         console.error(error)
@@ -222,6 +230,7 @@ app.post('/headPhone', async (request, response) => {
     }
 })
 
+
 app.put('/headPhone/:id', async (request, response) => {
     const id = request.params.id
     const { title, image, price } = request.body
@@ -229,6 +238,7 @@ app.put('/headPhone/:id', async (request, response) => {
         const update = await client.query(
             'UPDATE headPhone SET title = $2, price = $3, image = $4 WHERE id = $1'
         )[(id, title, price, image)]
+
         response.json('Successfully update')
         response.sendStatus(201)
     } catch (error) {
@@ -243,6 +253,9 @@ app.delete('/headPhone/:id', async (request, response) => {
         const dalete = await client.query('DELETE FROM headPhone WHERE id = $1')
         const deleteValues = [id]
         await client.query(deleteQuery, deleteValues)
+      
+      response.json('Successfully')
+    response.sendStatus(201)
     } catch (error) {
         console.error(error)
         response.sendStatus(500)

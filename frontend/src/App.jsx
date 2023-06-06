@@ -14,8 +14,13 @@ import Cart from './components/Cart'
 import BillingAddress from './components/BillingAddress'
 import ContactUs from './components/ContactUs'
 import AboutUs from './components/AboutUs'
+
 import Smartphones from './components/Smartphones'
 import PhoneProductDetails from './components/PhoneProductDetails'
+
+import HeadPhoneProducts from './components/HeadPhoneProducts'
+
+
 function App() {
     //Sara code
     //    const [showHero, setShowHero] = useState(true)
@@ -34,6 +39,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/laptop" element={<Products />} />
+                <Route path="/headphone" element={<HeadPhoneProducts />}></Route>
                 <Route path="/laptop/:id" element={<ProductDetails />} />
   <Route path="/phone/:id" element={<PhoneProductDetails />} />
                 <Route path="/signin" element={<SignIn />} />

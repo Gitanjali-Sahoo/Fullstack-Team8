@@ -81,7 +81,7 @@ function NavScrollExample() {
                                         Laptop{' '}
                                     </NavDropdown.Item>
 
-                                    <NavDropdown.Item href="#action5">
+                                    <NavDropdown.Item href="headphone">
                                         {' '}
                                         Headphone{' '}
                                     </NavDropdown.Item>
