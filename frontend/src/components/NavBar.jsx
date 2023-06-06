@@ -5,12 +5,18 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import SignIn from './SignIn';
 import { useState } from 'react';
+import {Link, Route, Routes} from 'react-router-dom'
+import HeadphoneProducts from './HeadPhoneProducts'
+import styled  from 'styled-components';
+import { SearchProducts } from './SearchProducts';
 
 
 
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faUserPlus, faCartPlus} from '@fortawesome/free-solid-svg-icons';
+
+
 
 
 
@@ -45,10 +51,10 @@ function NavScrollExample({ onIconClicked }) {
 
 
   return (
-   
+
 <>
 
-          <div>
+          <Div>
 
 
       <Navbar collapseOnSelect expand="lg"
@@ -70,21 +76,21 @@ function NavScrollExample({ onIconClicked }) {
             <NavDropdown title="Products" id="navbarScrollingDropdown" className="dropdown"  >
               <NavDropdown.Item href="#action3">Smart Phone</NavDropdown.Item>
               <NavDropdown.Item href="#action4"> Laptop </NavDropdown.Item>
-              <NavDropdown.Item href="#action5" > Headphone </NavDropdown.Item>
+             <Link to="headPhoneProducts" className='link'><NavDropdown.Item href="#action5" > Headphone </NavDropdown.Item></Link>
             </NavDropdown>
 
           </Nav>
 
           <Form className="d-flex">
         <Navbar.Collapse id="navbarScroll">
-            <Nav.Link><FontAwesomeIcon icon={faMagnifyingGlass} style={Style} className="me-3" id='navbar-icon'/> </Nav.Link>
+            <Link to='/searchProducts' ><Nav.Link><FontAwesomeIcon icon={faMagnifyingGlass} style={Style} className="me-3" id='navbar-icon'/> </Nav.Link></Link>
             <Nav.Link> <FontAwesomeIcon onClick={handleUserIconClick }  icon={faUserPlus} style={Style}  className="me-3"id='navbar-icon'/></Nav.Link>
             <Nav.Link> <FontAwesomeIcon icon={faCartPlus} style={Style} className="me-4" id='navbar-icon'/></Nav.Link>
             </Navbar.Collapse>
           </Form>
        </Navbar.Collapse>
           </Container>
-           
+
 
       </Navbar>
 
@@ -107,7 +113,12 @@ function NavScrollExample({ onIconClicked }) {
               )}
 
               </div>
-              </div>
+              </Div>
+              <Routes>
+                <Route path='headPhoneProducts' element={ <HeadphoneProducts /> }></Route>
+                <Route path='searchProducts' element={<SearchProducts />} ></Route>
+              </Routes>
+
 
 </>
 
@@ -117,3 +128,10 @@ function NavScrollExample({ onIconClicked }) {
 }
 
 export default NavScrollExample;
+
+
+const Div = styled.div`
+.link{
+    text-decoration: none;
+}
+`

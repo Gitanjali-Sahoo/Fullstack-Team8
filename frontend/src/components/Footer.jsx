@@ -1,9 +1,6 @@
-
-
-
-
 import {Link, Route, Routes} from 'react-router-dom'
-'
+import AboutUs from './AboutUs'
+import ContactUs from './ContactUs'
 
 
 
@@ -58,8 +55,8 @@ const Wrap = styled.div`
         padding: 20px;
         margin-top: 20px;
 position:fixed;
-width: 100%
-top:0;
+/* width: 100%
+top:0; */
 bottom:0;
 left:0;
 right:0;
@@ -87,7 +84,7 @@ right:0;
     .link{
         text-decoration: none;
     }
-  
+
 
 
 
@@ -115,31 +112,3 @@ padding-bottom:100px;
         }
     }
 `
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
