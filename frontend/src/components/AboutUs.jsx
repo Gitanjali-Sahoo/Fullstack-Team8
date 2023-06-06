@@ -38,7 +38,6 @@ const AboutUsProps = (props) => {
     )
 }
 
-
 const AboutUs = () => {
     return (
         <div className="container">
@@ -63,7 +62,7 @@ const AboutUs = () => {
     )
 }
 
-export default AboutUs;
+export default AboutUs
 
 const DIV = styled.div`
     .container {
@@ -73,17 +72,23 @@ const DIV = styled.div`
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+        padding-bottom: 50px;
+
+
     }
 
     .grid-container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 30px;
+ padding-bottom: 50px;
+
+
     }
 
     img {
         width: 100%;
         height: auto;
-        margin-top: 150px;
+        margin-top: 130px;
     }
 `
