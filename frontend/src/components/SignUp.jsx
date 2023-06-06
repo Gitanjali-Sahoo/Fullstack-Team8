@@ -207,7 +207,8 @@ const Wrap = styled.div`
         border: none;
     }
     .form-submit {
-        margin: 40px auto; /* Center horizontally */
+        margin: 40px auto 40px;
+         /* Center horizontally */
     }
 
     .icons {

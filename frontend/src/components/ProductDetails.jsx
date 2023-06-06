@@ -10,7 +10,7 @@ function ProductDetails() {
 
     useEffect(() => {
         axios
-            .get(`http://localhost:3000/laptops/${id}`)
+            .get(`http://localhost:3000/laptops1/${id}`)
             .then((response) => {
                 setLaptop(response.data)
             })
@@ -28,7 +28,7 @@ function ProductDetails() {
         <div className="product-details">
             <DetailsWrapper className="product">
                 <div className="image-wrapper">
-                    <img src={`/image/${laptop.image}`} alt="image" />
+                    <img src={laptop.image} alt="image" />
                     <button className="offer-btn">
                         EXTRA 20% DISCOUNT. USE CODE EXTRA20
                     </button>
