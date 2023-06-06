@@ -123,7 +123,45 @@ app.get('/laptops', async (req, res) => {
     }
 })
 
+////SEARCH ALLPRODUCTS
+app.get('/SearchProducts', async (request, response) =>{
+    try {
+        const result = await client.query('SELECT * FROM SearchProducts')
+        response.json(result.rows)
+    } catch (error) {
+        console.error(error)
+        response.sendStatus(500)
+    }
+})
 
+app.post('/SearchProducts', async (request, response) =>{
+    try {
+         const { id, brand, model, price, image} = request.body;
+      await client.query(
+  'INSERT INTO SearchProducts (id, brand, model, price, image) VALUES ($1, $2, $3, $4, $5)',
+  [id, brand, model, price, image]
+);
+
+        response.sendStatus(201)
+    } catch (error) {
+        console.error(error)
+        response.sendStatus(500)
+    }
+})
+
+app.delete("/SearchProducts/:id", async (request, response) =>{
+    try{
+        const id = request.params.id;
+        const deleteQuery = 'DELETE FROM SearchProducts WHERE id = $1';
+        const deleteValues = [id]
+        await client.query(deleteQuery, deleteValues)
+        response.json('Successfully')
+        response.sendStatus(201)
+    } catch (error) {
+        console.error(error)
+        response.sendStatus(500)
+    }
+    })
 //HEADPHONES PRODUCTS
 app.get('/headPhones', async (request, response) =>{
 
@@ -139,6 +177,18 @@ app.get('/headPhones', async (request, response) =>{
         response.sendStatus(500)
     }
 })
+  app.get('/headPhones/:id', async (request, response) =>{
+
+    try {
+        const id = request.params.id
+        const result = await client.query('SELECT * FROM headphone WHERE id = $1', [id])
+        response.json(result.rows)
+    } catch (error) {
+        console.error(error)
+        response.sendStatus(500)
+    }
+})
+
 app.post('/headPhone', async (request, response) =>{
     try {
          const { id, brand, model, price, image} = request.body;
