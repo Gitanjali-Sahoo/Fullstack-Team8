@@ -41,6 +41,7 @@ console.error(error)
     </DIV>
   )
 }
+export default SearchProducts
 
 const DIV = styled.div`
 .grid-container {

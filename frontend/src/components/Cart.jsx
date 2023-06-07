@@ -1,4 +1,4 @@
-
+import {Link} from 'react-router-dom'
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -129,7 +129,7 @@ const Cart = () => {
             <div>
 
                 <p>Total price: ${totalPrice}</p>
-                <button id="checkout">Checkout</button>
+                <Link to="/billing"> <button id="checkout">Checkout</button></Link>
             </div>
 
 
