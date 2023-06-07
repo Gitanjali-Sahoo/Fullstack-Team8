@@ -76,8 +76,6 @@ const Wrap = styled.div`
     .link {
         text-decoration: none;
     }
-
-
     @media screen and (max-width: 768px) {
         .footer-content {
             flex-direction: column;

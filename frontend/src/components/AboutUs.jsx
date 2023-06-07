@@ -72,23 +72,30 @@ const DIV = styled.div`
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        padding-bottom: 50px;
-
-
+        //padding-bottom: 50px;
     }
 
     .grid-container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 30px;
- padding-bottom: 50px;
-
-
+        //padding-bottom: 50px;
     }
 
     img {
         width: 100%;
         height: auto;
-        margin-top: 130px;
+        margin-top: 50px;
+    }
+
+    p{
+        display: flex;
+        justify-content: center;
+    }
+
+    @media (max-width: 550px) {
+        .grid-container {
+            grid-template-columns: repeat(1, 1fr);
+        }
     }
 `

@@ -17,6 +17,7 @@ import Smartphones from './components/Smartphones'
 import PhoneProductDetails from './components/PhoneProductDetails'
 
 import HeadPhoneProducts from './components/HeadPhoneProducts'
+import SearchProducts from './components/SearchProducts'
 
 import ConfirmationPage from './components/ConfirmationPage'
 import SearchProducts from './components/SearchProducts'
@@ -45,6 +46,13 @@ function App() {
                 ></Route>
                 <Route path="/smartphones" element={<Smartphones />}></Route>
                 <Route path="/laptop/:id" element={<ProductDetails />} />
+  <Route path="/phone/:id" element={<PhoneProductDetails />} />
+                <Route path="/signin" element={<SignIn />} />
+                <Route path="/billing" element={<BillingAddress />} />
+                <Route path="/contactUs" element={<ContactUs />}>  </Route>
+                <Route path="/smartphones" element={<Smartphones />}></Route>
+                <Route path="/aboutUs" element={<AboutUs />}></Route>
+                <Route path="/searchproduct" element={<SearchProducts />}></Route>
 
                 <Route path="/phone/:id" element={<PhoneProductDetails />} />
                 <Route path="/searchproduct" element={<SearchProducts />}></Route>
@@ -54,10 +62,7 @@ function App() {
                 <Route path="/contactUs" element={<ContactUs />}>
                     {' '}
                 </Route>
-
                 <Route path="/smartphones" element={<Smartphones />}></Route>
-
-
                 <Route path="/aboutUs" element={<AboutUs />}></Route>
                 <Route
                     path="/confirmationpage"
