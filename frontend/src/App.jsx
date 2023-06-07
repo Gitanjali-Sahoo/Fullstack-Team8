@@ -20,7 +20,6 @@ import HeadPhoneProducts from './components/HeadPhoneProducts'
 import SearchProducts from './components/SearchProducts'
 
 import ConfirmationPage from './components/ConfirmationPage'
-import SearchProducts from './components/SearchProducts'
 
 function App() {
     //Sara code
