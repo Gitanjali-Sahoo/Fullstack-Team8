@@ -1,7 +1,3 @@
-
-import ContactUs from './ContactUs'
-import AboutUs from './AboutUs'
-
 import { Link } from 'react-router-dom'
 
 import { Facebook, Twitter, Apple, Google } from 'react-bootstrap-icons'
@@ -64,7 +60,7 @@ const Wrap = styled.div`
         align-items: center;
         width: 100%;
         mix-blend-mode: lighten;
-        
+
     }
 
     .footer-text {

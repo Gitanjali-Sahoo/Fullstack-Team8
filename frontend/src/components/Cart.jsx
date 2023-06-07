@@ -1,7 +1,6 @@
-
-import { useEffect, useState } from "react";
-import axios from "axios";
-
+import { useEffect, useState } from 'react'
+import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 const Cart = () => {
     const [data, setData] = useState([])
@@ -14,23 +13,25 @@ const Cart = () => {
                 const initialData = response.data.map((item) => ({
                     ...item,
                     quantity: 1,
-                    totalPrice: item.price,
-                }));
+                    totalPrice: item.price
+                }))
 
                 setData(initialData)
-                calculateTotalPrice(initialData);
-
+                calculateTotalPrice(initialData)
             })
             .catch((error) => {
                 // Handle errors
                 console.error('Error fetching cart data:', error)
+
             });
 
     }, []);
 
+
     const updateCart = (productId, action) => {
         const updatedData = data.map((item) => {
             if (item.id === productId) {
+
                 let newQuantity = item.quantity;
                 if (action === 'increase') {
                     newQuantity = item.quantity + 1;
@@ -52,8 +53,20 @@ const Cart = () => {
 
 
 
+                const newPrice = item.price * newQuantity
+                return {
+                    ...item,
+                    quantity: newQuantity,
+                    totalPrice: newPrice
+                }
+            }
+            return item
+        })
+
+
         setData(updatedData);
         calculateTotalPrice(updatedData);
+
     }
 
     const removeFromCart = (id) => {
@@ -61,23 +74,26 @@ const Cart = () => {
             .delete(`http://localhost:3000/cart/${id}`)
             .then((response) => {
                 if (response.status === 200) {
-                    const updatedData = data.filter((item) => item.id !== id);
+                    const updatedData = data.filter((item) => item.id !== id)
                     setData(updatedData)
-                    calculateTotalPrice(updatedData); // Pass updatedData as an argument
+                    calculateTotalPrice(updatedData) // Pass updatedData as an argument
                 }
             })
             .catch((error) => {
                 console.error('Error in removing item:', error)
-            });
-    };
+            })
+    }
 
     const calculateTotalPrice = (cartData) => {
         const totalPrice = cartData.reduce(
             (total, item) => total + item.totalPrice,
             0
-        );
+        )
         setTotalPrice(totalPrice)
-    };
+
+    }
+
+   
 
     return (
         <div id="cart_container">
@@ -129,14 +145,18 @@ const Cart = () => {
             <div>
 
                 <p>Total price: ${totalPrice}</p>
-                <button id="checkout">Checkout</button>
+<Link to="/billing">
+                <button id="checkout">Checkout</button></Link>
+                
             </div>
 
 
-        </div>
 
+        </div>
     )
 }
 
 
+
 export default Cart;
+

@@ -26,6 +26,7 @@ function ProductDetails() {
 
     return (
         <div className="product-details">
+
             <DetailsWrapper className="product">
                 <div className="image-wrapper">
                     <img src={phone.image} alt="image" />
@@ -86,6 +87,7 @@ function ProductDetails() {
                     </p>
                 </Description>
             </DetailsWrapper>
+
         </div>
     )
 }
