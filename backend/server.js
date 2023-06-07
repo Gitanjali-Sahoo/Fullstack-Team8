@@ -113,7 +113,6 @@ app.get('/laptops1', async (req, res) => {
     try {
         const result = await client.query('SELECT * FROM laptops1')
 
-
         res.json(result.rows)
     } catch (err) {
         console.error(err)
@@ -137,13 +136,13 @@ app.post('/laptops1', async (request, response) => {
 })
 
 
-app.post('/SearchProducts', async (request, response) =>{
-    try {
-         const { id, brand, model, price, image} = request.body;
-      await client.query(
-  'INSERT INTO SearchProducts (id, brand, model, price, image) VALUES ($1, $2, $3, $4, $5)',
-  [id, brand, model, price, image]
-);
+// app.post('/SearchProducts', async (request, response) =>{
+//     try {
+//          const { id, brand, model, price, image} = request.body;
+//       await client.query(
+//   'INSERT INTO SearchProducts (id, brand, model, price, image) VALUES ($1, $2, $3, $4, $5)',
+//   [id, brand, model, price, image]
+// );
 
 //Get method with id
 
@@ -155,8 +154,6 @@ app.get('/laptops1/:id', (req, res) => {
     client
 
         .query('SELECT * FROM laptops1 WHERE id = $1', [laptopId])
-
-
 
         .then((result) => {
             const laptop = result.rows[0]
@@ -196,11 +193,18 @@ app.post('/SearchProducts', async (request, response) =>{
   [id, brand, model, price, image]
 );
 
-        response.sendStatus(201)
+
+//HEADPHONES PRODUCTS
+app.get('/headPhones', async (request, response) => {
+ try {
+        const result = await client.query('SELECT * FROM headphone')
+
+        response.json(result.rows)
     } catch (error) {
         console.error(error)
         response.sendStatus(500)
     }
+
 })
 
 app.delete("/SearchProducts/:id", async (request, response) =>{
@@ -216,6 +220,7 @@ app.delete("/SearchProducts/:id", async (request, response) =>{
         response.sendStatus(500)
     }
     })
+
 
 //HEADPHONES PRODUCTS
 app.get('/headPhones', async (request, response) =>{
@@ -366,7 +371,6 @@ app.post('/smartphones', async (request, response) => {
 })
 
 
-
 //CONTACT US
 app.get('/userInfo', async (request, response) =>{
     try {
@@ -377,10 +381,15 @@ app.get('/userInfo', async (request, response) =>{
         response.sendStatus(500)
     }
 })
+
 app.post('/userInfo', async (request, response) =>{
 
     try {
         const {name, email, message } = request.body;
+        app.post('/userInfo', async (request, response) => {
+
+    try {
+        const { name, email, message } = request.body
         await client.query(
             'INSERT INTO contactUs (name, email, message) VALUES ($1, $2, $3)',
             [name, email, message]
@@ -395,4 +404,4 @@ app.post('/userInfo', async (request, response) =>{
 
 app.listen(3000, () => {
     console.log('Server is running')
-})
+});
