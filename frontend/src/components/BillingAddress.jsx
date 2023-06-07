@@ -96,7 +96,7 @@ function BillingAddres() {
                     />
                 </Form.Group>
 
-                <Button
+                { /*<Button
                     style={{
                         backgroundColor: '#f8df00',
                         color: 'black',
@@ -106,7 +106,7 @@ function BillingAddres() {
                     type="submit"
                 >
                     Submit form
-                </Button>
+                </Button> */}
             </StyledForm>
 
             <PaymentMethodContainer>

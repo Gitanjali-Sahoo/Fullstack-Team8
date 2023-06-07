@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { CheckCircle } from 'react-bootstrap-icons'
 
 function ConfirmationPage() {
+      const deliveryImage= 'https://images.pexels.com/photos/6868618/pexels-photo-6868618.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2';
     return (
         <Wrap>
             <div className="checkIcon">
@@ -18,7 +19,7 @@ function ConfirmationPage() {
             <div className="order-img-container">
                 <img
                     className="order-img"
-                    src="./src/images/confirrm.png"
+                    src={deliveryImage}
                     alt="Image of delivery person"
                 />
             </div>
@@ -51,16 +52,17 @@ const Wrap = styled.div`
     .order-img-container {
         display: flex;
         justify-content: center;
+       padding-bottom:5%;
     }
     .order-img {
         display: flex;
-        width: 300px;
-        height:500px;
-        border-radius: 50%;
+
+        height:auto;
+
     }
     @media screen and (min-width: 1000px) {
         .order-img {
-            width: 60%;
+            width: 50%;
         }
     }
 `
