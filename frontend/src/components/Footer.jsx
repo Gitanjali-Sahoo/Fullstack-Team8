@@ -1,21 +1,21 @@
-import {Link, Route, Routes} from 'react-router-dom'
-import AboutUs from './AboutUs'
-import ContactUs from './ContactUs'
-
-
-
-
+import { Link } from 'react-router-dom'
 
 import { Facebook, Twitter, Apple, Google } from 'react-bootstrap-icons'
 import styled from 'styled-components'
+
 function Footer() {
     return (
         <Wrap>
             <div className="footer-container">
                 <div className="footer-content">
                     <div className="footer-text">
-                       <Link to="/contactUs"  className='link'><p>Contact Us</p></Link>
-                       <Link to="/aboutUs" className='link'> <p>About Us</p></Link>
+                        <Link to="/contactUs" className="link">
+                            <p>Contact Us</p>
+                        </Link>
+                        <Link to="/aboutUs" className="link">
+                            {' '}
+                            <p>About Us</p>
+                        </Link>
                     </div>
                     <div className="footer-copyright">
                         <p>
@@ -31,11 +31,7 @@ function Footer() {
                     </div>
                 </div>
             </div>
-            <Routes>
-            <Route path="/contactUs" element={< ContactUs />}> </Route>
-            <Route path="/aboutUs" element={< AboutUs />}></Route>
-            </Routes>
-         </Wrap>
+        </Wrap>
     )
 }
 
@@ -43,7 +39,6 @@ export default Footer
 
 // Using styled components
 const Wrap = styled.div`
-
     .footer-container {
         background-color: black;
         color: white;
@@ -53,14 +48,10 @@ const Wrap = styled.div`
         align-items: center;
         gap: 20px;
         padding: 20px;
-        margin-top: 20px;
-position:fixed;
-/* width: 100%
-top:0; */
-bottom:0;
-left:0;
-right:0;
-
+        position: fixed; /* Change position to fixed */
+        bottom: 0; /* Position the footer at the bottom */
+        left: 0;
+        right: 0;
     }
 
     .footer-content {
@@ -69,6 +60,7 @@ right:0;
         align-items: center;
         width: 100%;
         mix-blend-mode: lighten;
+
     }
 
     .footer-text {
@@ -81,31 +73,23 @@ right:0;
         gap: 20px;
     }
 
-    .link{
+    .link {
         text-decoration: none;
     }
-
-
-
-
     @media screen and (max-width: 768px) {
         .footer-content {
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            position:fixed;
+            position: fixed;
 
-
-
-margin-bottom:210px ;
-margin-top:150px;
-padding-bottom:100px;
-
+            margin-bottom: 210px;
+            margin-top: 150px;
+            padding-bottom: 100px;
         }
         .footer-text {
-   gap: 0px;
+            gap: 0px;
             flex-direction: column;
-
         }
         .footer-copyright {
             text-align: center;
