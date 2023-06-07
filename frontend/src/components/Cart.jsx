@@ -22,36 +22,18 @@ const Cart = () => {
             .catch((error) => {
                 // Handle errors
                 console.error('Error fetching cart data:', error)
-
-            });
-
-    }, []);
-
+            })
+    }, [])
 
     const updateCart = (productId, action) => {
         const updatedData = data.map((item) => {
             if (item.id === productId) {
-
-                let newQuantity = item.quantity;
+                let newQuantity = item.quantity
                 if (action === 'increase') {
-                    newQuantity = item.quantity + 1;
+                    newQuantity = item.quantity + 1
                 } else if (action === 'decrease' && item.quantity > 1) {
-                    newQuantity = item.quantity - 1;
+                    newQuantity = item.quantity - 1
                 }
-
-
-
-                const newPrice = item.price * newQuantity;
-                return {
-                    ...item,
-                    quantity: newQuantity,
-                    totalPrice: newPrice,
-                };
-            }
-            return item;
-        });
-
-
 
                 const newPrice = item.price * newQuantity
                 return {
@@ -63,10 +45,8 @@ const Cart = () => {
             return item
         })
 
-
-        setData(updatedData);
-        calculateTotalPrice(updatedData);
-
+        setData(updatedData)
+        calculateTotalPrice(updatedData)
     }
 
     const removeFromCart = (id) => {
@@ -90,10 +70,7 @@ const Cart = () => {
             0
         )
         setTotalPrice(totalPrice)
-
     }
-
-   
 
     return (
         <div id="cart_container">
@@ -101,62 +78,58 @@ const Cart = () => {
             <div id="cart-products">
                 {data.map((item) => (
                     <div key={item.id} id="cart-product">
-                        <img src={item.image} alt={item.model} id="cart-product-image" />
+                        <img
+                            src={item.image}
+                            alt={item.model}
+                            id="cart-product-image"
+                        />
                         <div id="item-info">
                             <h3>{item.model}</h3>
                             <p>{item.price}</p>
-                            <div >
-
+                            <div>
                                 <div id="decrease-increase">
                                     <div id="btns">
-                                        <button onClick={() =>
-                                            updateCart(item.id, 'decrease')
-                                        } >
+                                        <button
+                                            onClick={() =>
+                                                updateCart(item.id, 'decrease')
+                                            }
+                                        >
                                             -
                                         </button>
 
                                         <button
                                             onClick={() =>
                                                 updateCart(item.id, 'increase')
-                                            }  >
+                                            }
+                                        >
                                             +
                                         </button>
-
                                     </div>
 
                                     <span className="quantity">
                                         {item.quantity}
-                                    </span><button
+                                    </span>
+                                    <button
                                         id="remove-button"
                                         onClick={() => removeFromCart(item.id)}
-                                    > Remove  </button>
+                                    >
+                                        {' '}
+                                        Remove{' '}
+                                    </button>
                                 </div>
                             </div>
-
                         </div>
-
                     </div>
-
-
                 ))}
-
-
             </div>
             <div>
-
                 <p>Total price: ${totalPrice}</p>
-<Link to="/billing">
-                <button id="checkout">Checkout</button></Link>
-                
+                <Link to="/billing">
+                    <button id="checkout">Checkout</button>
+                </Link>
             </div>
-
-
-
         </div>
     )
 }
 
-
-
-export default Cart;
-
+export default Cart

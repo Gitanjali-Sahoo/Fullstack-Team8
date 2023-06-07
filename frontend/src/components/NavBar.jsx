@@ -91,22 +91,17 @@ function NavScrollExample() {
                             <Form className="d-flex">
                                 <Navbar.Collapse id="navbarScroll">
                                     <Nav.Link>
-                                        <FontAwesomeIcon
-                                            icon={faMagnifyingGlass}
-                                            style={Style}
-                                            className="me-3"
-                                            id="navbar-icon"
-                                        />{' '}
+                                        <Link to="/searchproduct">
+                                            <FontAwesomeIcon
+                                                icon={faMagnifyingGlass}
+                                                style={Style}
+                                                className="me-3"
+                                                id="navbar-icon"
+                                            />
+                                        </Link>{' '}
                                     </Nav.Link>
                                     <Nav.Link>
                                         {' '}
-                                        {/* <FontAwesomeIcon
-                                            onClick={handleUserIconClick}
-                                            icon={faUserPlus}
-                                            style={Style}
-                                            className="me-3"
-                                            id="navbar-icon"
-                                        /> */}
                                         <Link to="/signin">
                                             <FontAwesomeIcon
                                                 icon={faUserPlus}

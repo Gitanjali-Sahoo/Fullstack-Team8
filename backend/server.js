@@ -173,13 +173,13 @@ app.post('/laptops1', async (request, response) => {
 })
 
 
-app.post('/SearchProducts', async (request, response) =>{
-    try {
-         const { id, brand, model, price, image} = request.body;
-      await client.query(
-  'INSERT INTO SearchProducts (id, brand, model, price, image) VALUES ($1, $2, $3, $4, $5)',
-  [id, brand, model, price, image]
-);
+// app.post('/SearchProducts', async (request, response) =>{
+//     try {
+//          const { id, brand, model, price, image} = request.body;
+//       await client.query(
+//   'INSERT INTO SearchProducts (id, brand, model, price, image) VALUES ($1, $2, $3, $4, $5)',
+//   [id, brand, model, price, image]
+// );
 
 //Get method with id
 
@@ -234,7 +234,7 @@ app.delete("/SearchProducts/:id", async (request, response) =>{
     })
 
 
-   
+
 
   app.get('/headPhones/:id', async (request, response) =>{
 
@@ -242,11 +242,12 @@ app.delete("/SearchProducts/:id", async (request, response) =>{
         const id = request.params.id
         const result = await client.query('SELECT * FROM headphone WHERE id = $1', [id])
         response.json(result.rows)}
-      .catch((error) => {
+
+      catch(error)  {
             console.error('Error retrieving product:', error)
 
             res.status(500).json({ error: 'Failed to retrieve product' })
-        })
+        }
 })
 
 app.post('/headPhone', async (request, response) => {
@@ -403,4 +404,4 @@ app.post('/userInfo', async (request, response) => {
 
 app.listen(3000, () => {
     console.log('Server is running')
-})
+});
