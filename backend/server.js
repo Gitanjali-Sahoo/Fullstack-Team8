@@ -237,9 +237,10 @@ app.get('/headPhones/:id', async (request, response) => {
 
 app.post('/headPhone', async (request, response) => {
     try {
+        const { id, brand, model, price, image } = request.body
         await client.query(
-            'INSERT INTO headPhone (title, price, image) VALUES ($1, $2, $3)',
-            [title, price, image]
+            'INSERT INTO headphone (id, brand, model, price, image) VALUES ($1, $2, $3, $4, $5)',
+            [id, brand, model, price, image]
         )
         response.sendStatus(201)
     } catch (error) {
@@ -267,10 +268,9 @@ app.put('/headPhone/:id', async (request, response) => {
 app.delete('/headPhone/:id', async (request, response) => {
     try {
         const id = request.params.id
-        const dalete = await client.query('DELETE FROM headPhone WHERE id = $1')
+        const deleteQuery = 'DELETE FROM headphone WHERE id = $1'
         const deleteValues = [id]
         await client.query(deleteQuery, deleteValues)
-
         response.json('Successfully')
         response.sendStatus(201)
     } catch (error) {
@@ -365,7 +365,7 @@ app.delete('/cart/:id', async (request, response) => {
 //CONTACT US
 app.get('/userInfo', async (request, response) => {
     try {
-        const result = await client.query('SELECT * FROM userInfo')
+        const result = await client.query('SELECT * FROM contactUs')
         response.json(result.rows)
     } catch (error) {
         console.error(error)

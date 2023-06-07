@@ -66,7 +66,7 @@ const DIV = styled.div`
     align-items: center;
     justify-content: center;
     /* margin-top: 100px; */
-    height: 100vh;
+    height: 80vh;
 }
 
 form{

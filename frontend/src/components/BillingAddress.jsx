@@ -96,7 +96,7 @@ function BillingAddres() {
                     />
                 </Form.Group>
 
-                <Button
+                { /*<Button
                     style={{
                         backgroundColor: '#f8df00',
                         color: 'black',
@@ -106,7 +106,7 @@ function BillingAddres() {
                     type="submit"
                 >
                     Submit form
-                </Button>
+                </Button> */}
             </StyledForm>
 
             <PaymentMethodContainer>
@@ -199,7 +199,9 @@ const StyledContainer = styled.div`
     justify-content: center;
     align-items: center;
     padding: 20px;
-    
+
+     margin-bottom:60px;
+
 `
 
 const StyledForm = styled(Form)`
@@ -220,11 +222,13 @@ const FormInput = styled.input`
 
 const PaymentMethodContainer = styled.div`
     margin-top: 20px;
+    padding-bottom: 100px;
 `
 
 const PaymentContainer = styled.div`
     display: flex;
     flex-direction: column;
+    margin-bottom:20px;
 `
 
 const RadioWrapper = styled.div`
