@@ -29,9 +29,11 @@ function ConfirmationPage() {
 export default ConfirmationPage
 
 const Wrap = styled.div`
+  padding-bottom:100px;
     .checkIcon {
         text-align: center;
         font-size: 4rem;
+
     }
     h1 {
         font-family: italiana;
@@ -52,8 +54,8 @@ const Wrap = styled.div`
     }
     .order-img {
         display: flex;
-        width: 100%;
-        height: 500px;
+        width: 300px;
+        height:500px;
         border-radius: 50%;
     }
     @media screen and (min-width: 1000px) {

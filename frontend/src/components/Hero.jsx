@@ -1,5 +1,5 @@
 import headphone from '../assets/images/headphone.jpg'
-
+import { Link } from 'react-router-dom'
 function Hero() {
     return (
         <div className="hero-container" id="hero-container">
@@ -18,10 +18,13 @@ function Hero() {
                         Your Destination for High-Tech Wonders.
                     </p>
                 </div>
+                <Link to="/searchproduct">
 
-                <div id="hero-button">
+<div id="hero-button">
                     <button>Buy</button>
                 </div>
+</Link>
+
             </div>
         </div>
     )

@@ -152,7 +152,7 @@ function SignUp() {
     )
 }
 
-export default SignUp
+export default SignUp;
 
 const Wrap = styled.div`
     .form-sign {
@@ -208,7 +208,8 @@ const Wrap = styled.div`
     }
     .form-submit {
         margin: 40px auto 40px;
-         /* Center horizontally */
+        margin-top:40px;
+
     }
 
     .icons {
