@@ -1,6 +1,8 @@
 import axios from 'axios';
 import {useState, useEffect} from 'react'
 import styled from 'styled-components';
+import {Link, Route, Routes} from 'react-router-dom'
+import HeadPhoneDetails from './HeadPhoneDetails';
 
 
 const HeadPhoneProducts = () => {
@@ -19,10 +21,11 @@ const HeadPhoneProducts = () => {
   return (
     <DIV>
         <div className='container'>
+            <h3 className='title'>HeadPhone</h3>
     <div className='grid-container'>
         {headphones.map(headphone =>(
             <div className='grid-item' key={headphone.id}>
-                <img src={headphone.image} />
+            <Link to='/headPhoneDetails'> <img src={headphone.image} /></Link>
               <div className='productsInfo'>  <p>{headphone.brand}</p>
                 <p className='headphone-model'>{headphone.model}</p>
                 <p>{headphone.price} Kr</p>
@@ -31,6 +34,9 @@ const HeadPhoneProducts = () => {
         ))}
     </div>
     </div>
+    <Routes>
+            <Route path="/headPhoneDetails" element={< HeadPhoneDetails />}> </Route>
+    </Routes>
     </DIV>
   )
 }
@@ -45,15 +51,21 @@ const DIV = styled.div`
     padding: 10px 60px;
 }
 
+.title{
+    display: flex;
+    margin-left: 5%;
+}
+
 .grid-item {
     margin: 0 10px;
-        border: none;
+    border: none;
 }
 
 img {
     width: 100%;
     height: 250px;
-    /* box-sizing:content-box; */
+    margin-top: 8vh;
+
 }
 .headphone-model{
     font-size: 15px;
@@ -64,11 +76,12 @@ img {
 button{
     background: white;
     color: black;
-    border-radius: 0px;
     font-size: 15px;
     padding: 6px 35px;
     width: 100%;
     font-weight: bold;
+    border-radius: 5px;
+    border: none;
 }
 
 p{

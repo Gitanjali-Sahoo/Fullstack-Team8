@@ -156,6 +156,7 @@ app.delete('/SearchProducts/:id', async (request, response) => {
     }
 })
 
+
 //New database for laptop using link for images
 
 app.get('/laptops1', async (req, res) => {
@@ -207,6 +208,13 @@ app.get('/laptops1/:id', (req, res) => {
             res.status(500).json({ error: 'Failed to retrieve product' })
         })
 })
+        response.sendStatus(201)
+    } catch (error) {
+        console.error(error)
+        response.sendStatus(500)
+    }
+})
+
 
 //HEADPHONES PRODUCTS
 app.get('/headPhones', async (request, response) => {
@@ -220,6 +228,7 @@ app.get('/headPhones', async (request, response) => {
     }
 })
 
+
 app.get('/headPhones/:id', async (request, response) => {
     try {
         const id = request.params.id
@@ -232,21 +241,27 @@ app.get('/headPhones/:id', async (request, response) => {
         console.error('Error retrieving product:', error)
 
         res.status(500).json({ error: 'Failed to retrieve product' })
-    }
+
+
+
+
 })
 
-app.post('/headPhone', async (request, response) => {
+
+app.post('/headPhone', async (request, response) =>{
     try {
-        await client.query(
-            'INSERT INTO headPhone (title, price, image) VALUES ($1, $2, $3)',
-            [title, price, image]
-        )
+         const { id, brand, model, price, image} = request.body;
+      await client.query(
+  'INSERT INTO headphone (id, brand, model, price, image) VALUES ($1, $2, $3, $4, $5)',
+  [id, brand, model, price, image]
+);
         response.sendStatus(201)
     } catch (error) {
         console.error(error)
         response.sendStatus(500)
     }
 })
+
 
 app.put('/headPhone/:id', async (request, response) => {
     const id = request.params.id
@@ -264,19 +279,19 @@ app.put('/headPhone/:id', async (request, response) => {
     }
 })
 
-app.delete('/headPhone/:id', async (request, response) => {
-    try {
-        const id = request.params.id
-        const dalete = await client.query('DELETE FROM headPhone WHERE id = $1')
+app.delete("/headPhone/:id", async (request, response) =>{
+    try{
+        const id = request.params.id;
+        const deleteQuery = 'DELETE FROM headphone WHERE id = $1';
         const deleteValues = [id]
         await client.query(deleteQuery, deleteValues)
-
         response.json('Successfully')
         response.sendStatus(201)
     } catch (error) {
         console.error(error)
         response.sendStatus(500)
     }
+
 })
 
 //Smartphone PRODUCTS
@@ -362,10 +377,13 @@ app.delete('/cart/:id', async (request, response) => {
     }
 })
 
+
+
+
 //CONTACT US
-app.get('/userInfo', async (request, response) => {
+app.get('/userInfo', async (request, response) =>{
     try {
-        const result = await client.query('SELECT * FROM userInfo')
+        const result = await client.query('SELECT * FROM contactUs')
         response.json(result.rows)
     } catch (error) {
         console.error(error)
@@ -373,7 +391,11 @@ app.get('/userInfo', async (request, response) => {
     }
 })
 
-app.post('/userInfo', async (request, response) => {
+
+
+app.post('/userInfo', async (request, response) =>{
+
+ 
     try {
         const { name, email, message } = request.body
         await client.query(
@@ -386,6 +408,7 @@ app.post('/userInfo', async (request, response) => {
         response.sendStatus(500)
     }
 })
+
 
 app.listen(3000, () => {
     console.log('Server is running')
