@@ -158,8 +158,4 @@ margin-right:60px;
 
     }
 
-}
-
-
-
 `
