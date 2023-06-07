@@ -199,7 +199,9 @@ const StyledContainer = styled.div`
     justify-content: center;
     align-items: center;
     padding: 20px;
+
      margin-bottom:60px;
+
 `
 
 const StyledForm = styled(Form)`
