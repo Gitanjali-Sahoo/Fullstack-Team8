@@ -21,6 +21,7 @@ function Products() {
 
     return (
         <Wrap>
+            <div id='wrap'>
             <h1>Laptop</h1>
             <div className="laptop-container">
                 {data.map((laptop) => (
@@ -53,7 +54,8 @@ function Products() {
                         </Card.Body>
                     </Card>
                 ))}
-            </div>
+                </div>
+                </div>
         </Wrap>
     )
 }
@@ -61,6 +63,19 @@ function Products() {
 export default Products
 
 const Wrap = styled.div`
+
+#wrap {
+    display: flex;
+    flex-direction: column;
+ justify-content: center;
+    margin-top: 100px;
+    padding-bottom: 100px;
+
+}
+#wrap h1{
+    margin-left: 65px;
+
+}
     .laptop-container {
         display: grid;
         grid-template-columns: repeat(4, 1fr);

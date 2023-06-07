@@ -44,6 +44,7 @@ function App() {
                     path="/headphone"
                     element={<HeadPhoneProducts />}
                 ></Route>
+
                 <Route path="/smartphones" element={<Smartphones />}></Route>
                 <Route path="/laptop/:id" element={<ProductDetails />} />
   <Route path="/phone/:id" element={<PhoneProductDetails />} />
@@ -68,6 +69,7 @@ function App() {
                     path="/confirmationpage"
                     element={<ConfirmationPage />}
                 ></Route>
+                <Route path="/searchproduct" element={<SearchProducts />}></Route>
             </Routes>
             <Footer />
         </>
