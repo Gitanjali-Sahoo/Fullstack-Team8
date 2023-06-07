@@ -47,7 +47,10 @@ function App() {
                 <Route path="/laptop/:id" element={<ProductDetails />} />
 
                 <Route path="/phone/:id" element={<PhoneProductDetails />} />
-                <Route path="/searchproduct" element={<SearchProducts />}></Route>
+                <Route
+                    path="/searchproduct"
+                    element={<SearchProducts />}
+                ></Route>
                 <Route path="/signin" element={<SignIn />} />
                 <Route path="/billing" element={<BillingAddress />} />
 
@@ -56,7 +59,6 @@ function App() {
                 </Route>
 
                 <Route path="/smartphones" element={<Smartphones />}></Route>
-
 
                 <Route path="/aboutUs" element={<AboutUs />}></Route>
                 <Route
