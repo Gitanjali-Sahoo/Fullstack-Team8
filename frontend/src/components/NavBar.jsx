@@ -73,7 +73,7 @@ function NavScrollExample() {
                                     id="navbarScrollingDropdown"
                                     className="dropdown"
                                 >
-                                    <NavDropdown.Item href="#action3">
+                                    <NavDropdown.Item href="smartphones">
                                         Smart Phone
                                     </NavDropdown.Item>
                                     <NavDropdown.Item href="laptop">

@@ -25,74 +25,67 @@ function ProductDetails() {
     }
 
     return (
-           <div className="product-details">
+        <div className="product-details">
+            {phones.map((phone) => (
+                <DetailsWrapper key={phone.id} className="product">
+                    <div className="image-wrapper">
+                        <img src={phone.image} alt="image" />
+                        <button className="offer-btn">
+                            EXTRA 20% DISCOUNT. USE CODE EXTRA20
+                        </button>
+                    </div>
 
+                    <Description className="laptop-desc">
+                        <Wrapper>
+                            <h2>{phone.model}</h2>
+                        </Wrapper>
+                        <h5
+                            style={{
+                                color: 'lightskyblue',
+                                fontSize: '1.2rem',
+                                fontWeight: 'bold'
+                            }}
+                        >
+                            {' '}
+                            {phone.brand}
+                        </h5>
+                        <p
+                            style={{
+                                fontSize: '1.2rem',
+                                fontWeight: 'bold',
+                                color: 'red'
+                            }}
+                        >
+                            Exclusive
+                        </p>
+                        <p
+                            style={{
+                                color: 'lightskyblue',
+                                fontSize: '1.2rem',
+                                fontWeight: 'bold'
+                            }}
+                        >
+                            Price: {phone.price} Sek
+                        </p>
 
+                        <button>Add to Cart</button>
 
- {phones.map((phone) => (
-        <DetailsWrapper key={phone.id}  className="product">
-
-                 <div  className="image-wrapper">
-
-                    <img src={phone.image} alt="image" />
-                    <button className="offer-btn">
-                        EXTRA 20% DISCOUNT. USE CODE EXTRA20
-                    </button>
-                </div>
-
-                <Description className="laptop-desc">
-                    <Wrapper>
-                        <h2>{phone.model}</h2>
-                    </Wrapper>
-                    <h5
-                        style={{
-                            color: 'lightskyblue',
-                            fontSize: '1.2rem',
-                            fontWeight: 'bold'
-                        }}
-                    >
-                        {' '}
-                        {phone.brand}
-                    </h5>
-                    <p
-                        style={{
-                            fontSize: '1.2rem',
-                            fontWeight: 'bold',
-                            color: 'red'
-                        }}
-                    >
-                        Exclusive
-                    </p>
-                    <p
-                        style={{
-                            color: 'lightskyblue',
-                            fontSize: '1.2rem',
-                            fontWeight: 'bold'
-                        }}
-                    >
-                        Price: {phone.price} Sek
-                    </p>
-
-                    <button>Add to Cart</button>
-
-
-                    <p>
-                        <AlarmFill />
-                        -Order :- within 17 hours you will receive it.{' '}
-                    </p>
-                    <p>
-                        <Watch />
-                        -Free delivery on all orders
-                    </p>
-                    <p>
-                        <Gift />
-                        -Gift wrapping available at checkout
-                    </p>
-                </Description>
-                    </DetailsWrapper>
-))}
+                        <p>
+                            <AlarmFill />
+                            -Order :- within 17 hours you will receive it.{' '}
+                        </p>
+                        <p>
+                            <Watch />
+                            -Free delivery on all orders
+                        </p>
+                        <p>
+                            <Gift />
+                            -Gift wrapping available at checkout
+                        </p>
+                    </Description>
+                </DetailsWrapper>
+            ))}
         </div>
-
     )
 }
 

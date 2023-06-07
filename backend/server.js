@@ -114,7 +114,6 @@ app.get('/laptops1', async (req, res) => {
     try {
         const result = await client.query('SELECT * FROM laptops1')
 
-
         res.json(result.rows)
     } catch (err) {
         console.error(err)
@@ -149,8 +148,6 @@ app.get('/laptops1/:id', (req, res) => {
 
         .query('SELECT * FROM laptops1 WHERE id = $1', [laptopId])
 
-
-
         .then((result) => {
             const laptop = result.rows[0]
 
@@ -164,12 +161,8 @@ app.get('/laptops1/:id', (req, res) => {
         })
 })
 
-
 //HEADPHONES PRODUCTS
 app.get('/headPhones', async (request, response) => {
-
- 
-
     try {
         const result = await client.query('SELECT * FROM headphone')
         response.json(result.rows)
@@ -193,7 +186,6 @@ app.post('/headPhone', async (request, response) => {
     }
 })
 
-
 app.put('/headPhone/:id', async (request, response) => {
     const id = request.params.id
 
@@ -202,7 +194,6 @@ app.put('/headPhone/:id', async (request, response) => {
         const update = await client.query(
             'UPDATE headPhone SET title = $2, price = $3, image = $4 WHERE id = $1'
         )[(id, title, price, image)]
-
 
         response.json('Successfully update')
         response.sendStatus(201)
@@ -219,9 +210,9 @@ app.delete('/headPhone/:id', async (request, response) => {
         const dalete = await client.query('DELETE FROM headPhone WHERE id = $1')
         const deleteValues = [id]
         await client.query(deleteQuery, deleteValues)
-      
-      response.json('Successfully')
-    response.sendStatus(201)
+
+        response.json('Successfully')
+        response.sendStatus(201)
     } catch (error) {
         console.error(error)
         response.sendStatus(500)
@@ -245,7 +236,7 @@ app.get('/smartphones/:id', (req, res) => {
 
     // Perform the database query to retrieve the product details based on the ID
     client
-        .query('SELECT * FROM laptops WHERE id = $1', [phoneId])
+        .query('SELECT * FROM smartphones WHERE id = $1', [phoneId])
         .then((result) => {
             const phone = result.rows[0]
             res.json(phone)
@@ -260,13 +251,6 @@ app.get('/cart', async (request, response) => {
     try {
         const result = await client.query('SELECT * FROM cart')
         response.json(result.rows)
-
-        const deleteQuery = 'DELETE FROM headphone WHERE id = $1'
-        const deleteValues = [id]
-        await client.query(deleteQuery, deleteValues)
-        response.json('Successfully')
-        response.sendStatus(201)
-
     } catch (error) {
         console.error(error)
         response.sendStatus(500)
@@ -315,6 +299,7 @@ app.post('/smartphones', async (request, response) => {
         response.sendStatus(500)
     }
 })
+
 //CONTACT US
 app.get('/userInfo', async (request, response) => {
     try {
@@ -326,11 +311,7 @@ app.get('/userInfo', async (request, response) => {
     }
 })
 
-app.get('/userInfo', async (request, response) => {
-    const { title, price, image } = request.body
-
 app.post('/userInfo', async (request, response) => {
-
     try {
         const { name, email, message } = request.body
         await client.query(

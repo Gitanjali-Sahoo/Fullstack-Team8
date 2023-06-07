@@ -21,6 +21,7 @@ function Products() {
 
     return (
         <Wrap>
+            <h1>Laptop</h1>
             <div className="laptop-container">
                 {data.map((laptop) => (
                     <Card key={laptop.id} className="laptop-card">
@@ -37,7 +38,10 @@ function Products() {
                             alt={laptop.brand}
                         />
                         <Card.Body>
-                            <Link to={`/laptop/${laptop.id}`}>
+                            <Link
+                                to={`/laptop/${laptop.id}`}
+                                className="laptop-link"
+                            >
                                 <Card.Title className="product-text">
                                     {laptop.model}
                                 </Card.Title>
@@ -91,14 +95,16 @@ const Wrap = styled.div`
         font-size: 15px;
         width: 100%;
         height: 28px;
+        text-decoration: none;
     }
 
     .card-btn {
-        border-radius: 0px;
+        border-radius: 5px;
         font-size: 15px;
         padding: 6px 35px;
         width: 100%;
         font-weight: bold;
+        border: none;
     }
     .laptop-img {
         width: 100%;
@@ -107,5 +113,8 @@ const Wrap = styled.div`
     .laptop-card {
         margin: 0 10px;
         border: none;
+    }
+    .laptop-link {
+        text-decoration: none;
     }
 `

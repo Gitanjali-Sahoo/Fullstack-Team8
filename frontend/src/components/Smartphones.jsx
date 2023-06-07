@@ -4,6 +4,7 @@ import Card from 'react-bootstrap/Card'
 import styled from 'styled-components'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 function Smartphone() {
     const [phones, setPhones] = useState([])
@@ -48,9 +49,10 @@ function Smartphone() {
                             alt={phone.brand}
                         />
                         <Card.Body>
+                            <Link to = {`/smartphones/${phone.id}`}>
                             <Card.Title className="product-text">
                                 {phone.model}
-                            </Card.Title>
+                            </Card.Title></Link>
                             <Card.Text>SEK {phone.price} </Card.Text>
                             <Button onClick={(e) => handlePost(e, phone)} className="card-btn" variant="light">
                                 Add to cart
