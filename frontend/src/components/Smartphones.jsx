@@ -36,7 +36,10 @@ function Smartphone() {
 
 
     return (
-        <Wrap >
+        <Wrap  >
+            <div id='wrap'>
+
+
             <h1>Smartphone</h1>
             <div className="phone-container">
 
@@ -49,10 +52,17 @@ function Smartphone() {
                             alt={phone.brand}
                         />
                         <Card.Body>
-                            <Link to = {`/smartphones/${phone.id}`}>
+
+
+
+
+
+ <Link className='link' to={`/phone/${phone.id}`}>
                             <Card.Title className="product-text">
                                 {phone.model}
-                            </Card.Title></Link>
+                                </Card.Title>
+                                </Link>
+
                             <Card.Text>SEK {phone.price} </Card.Text>
                             <Button onClick={(e) => handlePost(e, phone)} className="card-btn" variant="light">
                                 Add to cart
@@ -60,7 +70,8 @@ function Smartphone() {
                         </Card.Body>
                     </Card>
                 ))}
-            </div>
+                </div>
+                  </div>
         </Wrap>
     )
 }
@@ -68,20 +79,36 @@ function Smartphone() {
 export default Smartphone
 
 const Wrap = styled.div`
+#wrap {
+    display: flex;
+    flex-direction: column;
+ justify-content: center;
+    margin-top: 100px;
+    padding-bottom: 100px;
+
+}
+#wrap h1{
+    margin-left: 65px;
+
+}
+.link{
+    text-decoration:none;
+}
+
 
     .phone-container {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-gap: 15px;
-        justify-content: center;
-        align-items: center;
-        padding: 10px 60px;
+
+        padding: 60px 60px;
 
     }
 
     @media (max-width: 1200px) {
         .phone-container {
             grid-template-columns: repeat(3, 1fr);
+
         }
     }
 
@@ -90,35 +117,49 @@ const Wrap = styled.div`
             grid-template-columns: repeat(2, 1fr);
         }
     }
-
-    @media (max-width: 576px) {
+ @media (max-width: 576px) {
         .phone-container {
             grid-template-columns: repeat(1, 1fr);
 
+            margin-right:60px;
         }
+        #wrap h1{
+    margin-left: 0px;
+margin-right:60px;
+
+}
     }
+
 
     .product-text {
         font-size: 15px;
         width: 100%;
         height: 28px;
+         margin-top:3vh;
+
     }
 
     .card-btn {
-        border-radius: 0px;
+        border-radius: 5px;
+        border:none;
         font-size: 15px;
         padding: 6px 35px;
         width: 100%;
         font-weight: bold;
+
     }
     .phone-img {
-        width: 95%;
-        height: 300px;
+        width: 100%;
+        height: auto;
     }
     .phone-card {
         margin: 0 10px;
         border: none;
+
     }
+
+}
+
 
 
 `
